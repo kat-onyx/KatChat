@@ -11,7 +11,7 @@ class User < ApplicationRecord
     end
 
     def self.find_by_credentials(username, password)
-        user = User.find_by(username: username, password: password)
+        user = User.find_by(username: username)
 
         if user && user.valid_password?(password)
             return user
@@ -26,6 +26,8 @@ class User < ApplicationRecord
 
     def reset_session_token!
         self.session_token = self.class.generate_session_token
+        self.save
+        self.session_token
     end
 
     def password=(password) 
@@ -36,5 +38,6 @@ class User < ApplicationRecord
     def valid_password?(password)
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end
-
+     
+    # TO DO: create associations
 end

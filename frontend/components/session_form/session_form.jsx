@@ -44,36 +44,47 @@ class SessionForm extends React.Component {
 
     render () {
         let emailInput = null
+        let formTitle;
+        let submitText;
         if (this.props.formType === 'Create an account') {
             emailInput = (
                 <React.Fragment>
                     <br/>
-                    <label>
-                        Email
+                    <div>
+                        <h5 className="label-style">Email</h5>
                         <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input"/>
-                    </label>
+                    </div>
                 </React.Fragment>
             )
+            formTitle = (
+                <div className="form-title">Create an account</div>
+            )
+            submitText = "Login";
+        } else {
+            formTitle = (
+                <><div className="form-title">Welcome back</div> <div className="form-sub-title">We're so glad to see you!</div></>
+            )
+            submitText = "Continue"
         }
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="login-form">
-                        {this.props.formType}
+                        {formTitle}
                         <div>
                             {emailInput}
                             <br/>
-                            <label>
-                                Username
+                            <div>
+                                <h5 className="label-style">Username</h5>
                                 <input type="text" value={this.state.username} onChange={this.update('username')} className="login-input"/>
-                            </label>
+                            </div>
                             <br/>
-                            <label>
-                                Password
+                            <div>
+                                <h5 className="label-style">Password</h5>
                                 <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input"/>
-                            </label>
+                            </div>
                             <br/>
-                            <input className="session-submit" type="submit" value="Login"/>
+                            <button className="session-submit" type="submit">{submitText}</button>
                         </div>
                         <div>{this.props.navLink}</div>
                     </div>

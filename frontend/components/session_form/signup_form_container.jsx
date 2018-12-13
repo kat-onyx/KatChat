@@ -1,5 +1,5 @@
 import { signup } from "../../actions/session_actions";
-import { connect } from "http2";
+import { connect } from "react-redux";
 import SessionForm from './session_form';
 import { Link } from 'react-router-dom';
 import React from 'react';

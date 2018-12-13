@@ -1,5 +1,9 @@
 import React from 'react';
 
+// formTitleForFormType = {
+//     'signup': "Create an account",
+//     'signin': "Welcome back!"
+// }
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -7,7 +11,8 @@ class SessionForm extends React.Component {
 
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            email: ""
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,12 +43,25 @@ class SessionForm extends React.Component {
     }
 
     render () {
+        let emailInput = null
+        if (this.props.formType === 'Create an account') {
+            emailInput = (
+                <React.Fragment>
+                    <br/>
+                    <label>
+                        Email
+                        <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input"/>
+                    </label>
+                </React.Fragment>
+            )
+        }
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div>
                         {this.props.formType}
                         <div className="login-form">
+                            {emailInput}
                             <br/>
                             <label>
                                 Username

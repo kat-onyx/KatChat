@@ -16,6 +16,7 @@ class SessionForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
     handleSubmit(e) {
@@ -42,10 +43,20 @@ class SessionForm extends React.Component {
         );
     }
 
+    handleDemo(e) {
+        e.preventDefault();
+        const demoUser = {
+            username: "demoUser",
+            password: "123456"
+        }
+        this.props.processForm(demoUser);
+    }
+
     render () {
         let emailInput = null
         let formTitle;
         let submitText;
+        let demoUser = null;
         if (this.props.formType === 'Create an account') {
             emailInput = (
                 <React.Fragment>
@@ -64,7 +75,8 @@ class SessionForm extends React.Component {
             formTitle = (
                 <><div className="form-title">Welcome back!</div> <div className="form-sub-title">We're so excited to see you again!</div></>
             )
-            submitText = "Continue"
+            demoUser = (<div onClick={this.handleDemo} className="demo-user"> or <a href="" className="redirect">Try the Demo!</a></div>)
+            submitText = "Continue";
         }
         return (
             <div className="login-form-container">
@@ -87,7 +99,9 @@ class SessionForm extends React.Component {
                             <br/>
                             <button className="session-submit" type="submit">{submitText}</button>
                         </div>
-                        <div className="other-form-link">{this.props.navLink}</div>
+                        <div className="other-form-link">
+                            {this.props.navLink} {demoUser}
+                        </div>
                     </div>
                 </form>
             </div>

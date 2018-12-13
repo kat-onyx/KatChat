@@ -62,12 +62,13 @@ class SessionForm extends React.Component {
             submitText = "Login";
         } else {
             formTitle = (
-                <><div className="form-title">Welcome back</div> <div className="form-sub-title">We're so glad to see you!</div></>
+                <><div className="form-title">Welcome back!</div> <div className="form-sub-title">We're so excited to see you again!</div></>
             )
             submitText = "Continue"
         }
         return (
             <div className="login-form-container">
+                <div className="title">KatChat</div>
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="login-form">
                         {formTitle}
@@ -86,7 +87,7 @@ class SessionForm extends React.Component {
                             <br/>
                             <button className="session-submit" type="submit">{submitText}</button>
                         </div>
-                        <div>{this.props.navLink}</div>
+                        <div className="other-form-link">{this.props.navLink}</div>
                     </div>
                 </form>
             </div>

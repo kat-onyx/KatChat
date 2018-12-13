@@ -8,9 +8,9 @@ import ServerShow from './servers/server_show';
 
 const App = (props) => (
     <div>
-        <header>
+        {/* <header>
             <h1>Discord Clone</h1>
-        </header>
+        </header> */}
         <Switch>
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />

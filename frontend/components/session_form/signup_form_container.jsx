@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
     return {
         errors: state.errors.login,
         formType: 'Create an account',
-        navLink: <Link to="/login">Already have an account?</Link>
+        navLink: <Link to="/login" className="redirect">Already have an account?</Link>
     }
 }
 const mapDispatchToProps = (dispatch) => {

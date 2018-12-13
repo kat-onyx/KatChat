@@ -3,8 +3,8 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import { Route, Switch } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { logout } from '../util/session_api_util';
-import ServerShowContainer from './servers/server_show_container';
+import { logout } from '../actions/session_actions';
+import ServerShow from './servers/server_show';
 
 const App = (props) => (
     <div>
@@ -14,9 +14,9 @@ const App = (props) => (
         <Switch>
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
-            <ProtectedRoute exact path="/" component={ServerShowContainer}/>
+            <ProtectedRoute exact path="/" component={ServerShow}/>
         </Switch>
-        <button onClick={() => props.dispatch(logout)}>Logout</button>
+        <button onClick={() => props.dispatch(logout())}>Logout</button>
     </div>
 );
 

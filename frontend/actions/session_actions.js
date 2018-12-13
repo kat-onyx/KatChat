@@ -27,18 +27,24 @@ const receiveErrors = (errors) => {
 
 export const login = (user) => dispatch => {
     APIUtil.login(user) 
-    .then((resp) => dispatch(receiveCurrentUser(resp))),
-    err => (dispatch(receiveErrors(err.responseJSON)))
+        .then(
+            resp => dispatch(receiveCurrentUser(resp)),
+            err => dispatch(receiveErrors(err.responseJSON))
+        )
 };
 
 export const signup = (user) => dispatch => {
     APIUtil.signup(user) 
-    .then((resp) => dispatch(receiveCurrentUser(resp))),
-    err => (dispatch(receiveErrors(err.responseJSON)))
+    .then(
+        resp => dispatch(receiveCurrentUser(resp)),
+        err => dispatch(receiveErrors(err.responseJSON))
+    )
 };
 
 export const logout = () => dispatch => {
-    APIUtil.login() 
-    .then((resp) => dispatch(logoutCurrentUser(resp))),
-    err => (dispatch(receiveErrors(err.responseJSON)))
+    APIUtil.logout() 
+    .then(
+        resp => dispatch(logoutCurrentUser(resp)),
+        err => dispatch(receiveErrors(err.responseJSON))
+    )
 };

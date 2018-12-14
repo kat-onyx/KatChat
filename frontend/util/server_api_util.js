@@ -26,4 +26,5 @@ export const fetchServers = () => {
         method: "GET",
         url: `/api/servers`,
     })
+    //TODO: cannot use until subs are ready
 }

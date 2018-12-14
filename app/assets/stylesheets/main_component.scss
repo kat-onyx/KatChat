@@ -1,0 +1,26 @@
+.main-page-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    color: #fff; //test color for now, others should have different
+}
+
+.server-container-div {
+    background-color: #202225;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.channel-container-div {
+    background-color: #2f3136;
+    flex-direction: column;
+    width: 240px;
+}
+
+
+.messages-feed-container-div {
+    background-color: #36393f;
+    display: flex;
+    flex: 1;
+}

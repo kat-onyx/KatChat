@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import ServerShow from './server_show';
+import MainComponent from './main_component';
 
 const mapStateToProps = (state) => {
     
@@ -9,7 +9,7 @@ const mapDispatchToProps = (dispatch) => {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ServerShow);
+export default connect(mapStateToProps, mapDispatchToProps)(MainComponent);
 
 
 

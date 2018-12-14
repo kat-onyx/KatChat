@@ -29,7 +29,7 @@ export const login = (user) => dispatch => {
     APIUtil.login(user) 
         .then(
             resp => dispatch(receiveCurrentUser(resp)),
-            err => {debugger; return dispatch(receiveErrors(err.responseJSON))}
+            err => dispatch(receiveErrors(err.responseJSON))
         )
 };
 

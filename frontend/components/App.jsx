@@ -8,10 +8,6 @@ import MainComponentContainer from './main/main_component_container';
 
 const App = (props) => (
     <div>
-       
-        {/* <header>
-            <h1>Discord Clone</h1>
-        </header> */}
         <Switch>
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />

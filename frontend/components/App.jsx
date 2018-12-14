@@ -4,7 +4,7 @@ import SignupFormContainer from './session_form/signup_form_container';
 import { Route, Switch } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { logout } from '../actions/session_actions';
-import MainComponent from './main/main_component';
+import MainComponentContainer from './main/main_component_container';
 
 const App = (props) => (
     <div>
@@ -14,7 +14,7 @@ const App = (props) => (
         <Switch>
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
-            <ProtectedRoute path="/" component={MainComponent}/>
+            <ProtectedRoute path="/" component={MainComponentContainer} />
         </Switch>
         <button onClick={() => props.dispatch(logout())}>Logout</button>
     </div>

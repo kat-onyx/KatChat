@@ -3,28 +3,26 @@ import React from 'react';
 class ServerForm extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             name: '',
-            id: ''
+            id: "",
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
 
-        return this.props.processForm(this.state)
+        return this.props.createServer(this.state)
     }
-    handleChange() {
-        return (e) => {
-            this.setState({name: e.target.value})
-        }
+    handleChange(e) {
+        this.setState({name: e.target.value})
     }
     render () {
         return (
             <form onSubmit={this.handleSubmit}>
-                <button value={this.state.name} onChange={this.handleChange}></button>
-                
+                <input type="text" value={this.state.name} onChange={this.handleChange} />
             </form>
         )
     }

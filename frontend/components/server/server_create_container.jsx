@@ -8,6 +8,7 @@ const mapStateToProps = state => {
     return {
         errors: state.errors.serverName,
         currentUser: state.entities.users[state.session.id]
+        
     } 
 }
 
@@ -19,4 +20,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ServerForm));
+export default connect(mapStateToProps, mapDispatchToProps)(ServerForm);

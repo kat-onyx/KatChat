@@ -14,10 +14,14 @@ class SessionForm extends React.Component {
             password: "",
             email: ""
         };
-
+      
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
     }
+
+    // componentDidMount() {
+    //    this.props.clearErrors();
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -34,13 +38,13 @@ class SessionForm extends React.Component {
     renderErrors() {
         return (
             <ul>
-                {this.props.errors.map((error, i) => {
+                {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
-                        { error }
+                        {error}
                     </li>
-                })}
+                ))}
             </ul>
-        );
+        )
     }
 
     handleDemo(e) {
@@ -98,6 +102,7 @@ class SessionForm extends React.Component {
                             </div>
                             <br/>
                             <button className="session-submit" type="submit">{submitText}</button>
+                            {this.renderErrors()}
                         </div>
                         <div className="other-form-link">
                             {this.props.navLink} {demoUser}

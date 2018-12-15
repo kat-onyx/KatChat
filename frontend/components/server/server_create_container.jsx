@@ -3,7 +3,7 @@ import ServerForm from "./server_form";
 import { Link, withRouter } from 'react-router-dom';
 import { createServer, receiveErrors } from "../../actions/server_actions";
 import { connect } from 'react-redux';
-import { openModal, closeModal} from "../modal/modal";
+import { openModal, closeModal} from "../../actions/modal_actions";
 
 const mapStateToProps = state => {
     return {

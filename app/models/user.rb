@@ -20,6 +20,10 @@ class User < ApplicationRecord
         foreign_key: :owner_id,
         class_name: :Server
 
+    has_many :subscriptions,
+        primary_key: :id, 
+        foreign_key: :user_id,
+        class_name: :ServerSubscription
 
     attr_reader :password
     before_validation :ensure_session_token

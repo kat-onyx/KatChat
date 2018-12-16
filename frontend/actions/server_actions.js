@@ -4,6 +4,8 @@ export const REMOVE_SERVER = "REMOVE_SERVER";
 export const RECEIVE_ALL_SERVERS = "RECEIVE_ALL_SERVERS";
 export const RECEIVE_SERVER = "RECEIVE_SERVER";
 export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
+export const RECEIVE_SUB_SERVER = "RECEIVE_SUB_SERVER"
+
 
 const receiveAllServers = (servers) => {
     return {
@@ -15,6 +17,13 @@ const receiveAllServers = (servers) => {
 const receiveServer = (server) => {
     return {
         type: RECEIVE_SERVER,
+        server
+    }
+}
+
+receiveSubServer = (server) => {
+    return {
+        type: RECEIVE_SUB_SERVER,
         server
     }
 }
@@ -56,6 +65,20 @@ export const deleteServer = (server) => dispatch => {
 export const fetchServers = (server) => dispatch => {
     APIServerUtil.fetchServers(server)
         .then( resp => dispatch(receiveAllServers(resp)),
+                err => dispatch(receiveErrors(err.responseJSON))
+        )
+}
+
+export const createSub = (server) => dispatch => {
+    APIServerUtil.createSub(server)
+        .then( resp => dispatch(receiveSubServer(resp)),
+                err => dispatch(receiveErrors(err.responseJSON))
+        )
+}
+
+export const destroySub = (server) => dispatch => {
+    APIServerUtil.destroySub(server)
+        .then( resp => dispatch(removeServer(resp)),
                 err => dispatch(receiveErrors(err.responseJSON))
         )
 }

@@ -3,7 +3,8 @@ class Api::ServersController < ApplicationController
         @server = Server.new(server_params)
         @server.owner_id = current_user.id
 
-        if @server.save 
+        if @server.save
+            ServerSubcription.create(user_id: current_user.id, server_id: @server.id)
             render "api/servers/show"
         else
             render json: @server.errors.full_messages, status: 402
@@ -22,14 +23,14 @@ class Api::ServersController < ApplicationController
     end
 
     def show
-        @server = current_user.subscribed_servers.find(params[:id]);
-        # TODO: implement subs table
+        @server = current_user.subscriptions.find(params[:id]);
+        
         render "api/servers/show"
     end
 
     def index
         @servers = current_user.subscriptions
-        # TODO: implement subs
+        
         render :index
     end
 

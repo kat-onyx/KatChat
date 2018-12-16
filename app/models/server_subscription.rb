@@ -1,0 +1,2 @@
+class ServerSubscription < ApplicationRecord
+end

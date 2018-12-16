@@ -4,7 +4,7 @@ class Api::ServersController < ApplicationController
         @server.owner_id = current_user.id
 
         if @server.save
-            ServerSubcription.create(user_id: current_user.id, server_id: @server.id)
+            ServerSubscription.create(user_id: current_user.id, server_id: @server.id)
             render "api/servers/show"
         else
             render json: @server.errors.full_messages, status: 402

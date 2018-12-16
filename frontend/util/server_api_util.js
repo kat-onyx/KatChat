@@ -28,15 +28,10 @@ export const fetchServers = () => {
     })
 }
 
+
 export const createSub = (server) => {
     return $.ajax({
-        method: "GET",
-        url: "/api/server_subscriptions"
-    })
-}
-export const createSub = (server) => {
-    return $.ajax({
-        method: "GET",
+        method: "POST",
         url: "/api/server_subscriptions", 
         data: { server }
     })
@@ -44,7 +39,7 @@ export const createSub = (server) => {
 
 export const destroySub = (server) => {
     return $.ajax({
-        method: "GET",
+        method: "DELETE",
         url: `/api/server_subscriptions/${server.id}`
     })
 }

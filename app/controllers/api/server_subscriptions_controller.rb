@@ -1,6 +1,7 @@
-class Api::ServerSubscriptionsControllerController < ApplicationController
+class Api::ServerSubscriptionsController < ApplicationController
     def create 
-        @server = Server.find_by(name: params[:name])
+       
+        @server = Server.find_by(name: params[:server][:name])
         @server_subscription = ServerSubscription.new(user_id: current_user.id, server_id: @server.id)
         if @server_subscription.save 
             render 'api/servers/show'
@@ -19,7 +20,7 @@ class Api::ServerSubscriptionsControllerController < ApplicationController
         end
     end
 
-    private
+   
 
     def subscription_params
         params.require(:server_subscription).permit(:name)

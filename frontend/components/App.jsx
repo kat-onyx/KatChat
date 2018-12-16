@@ -5,9 +5,11 @@ import { Route, Switch } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { logout } from '../actions/session_actions';
 import MainComponentContainer from './main/main_component_container';
+import Modal from './modal/modal';
 
 const App = (props) => (
     <div>
+        <Modal />
         <Switch>
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />

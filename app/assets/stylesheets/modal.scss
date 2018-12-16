@@ -1,0 +1,121 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.createServer {
+    background-color: #36393f;
+    border-radius: 5px;
+    height: 420px;
+    overflow: hidden;
+    width: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+
+}
+
+.createInner {
+    justify-content: center;
+}
+
+.sassy-message {
+    justify-content: center;
+    color: #f6f6f7;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 16px;
+}
+.create-message {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #dcddde;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.long-message {
+    font-size: 16px;
+    font-weight: 300;
+    height: 48px;
+    line-height: 20px;
+    margin-top: 8px;
+    display: block;
+    color: #dcddde;
+}
+
+.create-button {
+    background-color: #7289da;
+    color: #fff;
+    width: 100%;
+    height: 44px;
+    min-height: 44px;
+    min-width: 130px;
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    line-height: 16px;
+    padding: 2px 16px;
+}
+
+h5.name-label {
+    text-transform: uppercase;
+    color: #b9bbbe;
+    letter-spacing: .5px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 70px;
+    margin-top: 35px;
+}
+
+input.name-input {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.3);
+    color: #f6f6f7;
+    height: 40px;
+    padding: 10px;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+}
+
+input.name-input:hover {
+    border-color: black;
+}
+
+input.name-input:focus {
+    border-color: #7289da;
+}
+
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import ServerFormContainer from '../server/server_create_container'
+
 
 class MainComponent extends React.Component {
     constructor(props) {
@@ -12,9 +12,14 @@ class MainComponent extends React.Component {
     }
 
     render() {
+        
         return (
             <div className="main-page-container">
-                <div className="server-container-div"><ServerFormContainer /></div>
+
+                <div className="server-container-div">
+                    <button className="createServerButton" onClick={() => this.props.openModal('createServer')}>+</button>
+                </div>
+
                 <div className="channel-container-div">Channel (DM or not) Container Here</div>
                 <div className="messages-feed-container-div">Messages Feed container here</div>
             </div>

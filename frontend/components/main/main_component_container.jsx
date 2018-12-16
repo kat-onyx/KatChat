@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import MainComponent from './main_component';
+import { openModal, closeModal } from "../../actions/modal_actions";
+
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -11,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        
+        openModal: (modal) => dispatch(openModal(modal)) 
     }
 }
 

@@ -1,16 +1,17 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import ServerCreateContainer from '../server/server_create_container';
+import CreateServerContainer from '../server/server_create_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
         return null;
     }
     let component;
+   
     switch (modal) {
         case 'createServer':
-            component = <ServerCreateContainer />;
+            component = <CreateServerContainer />;
             break;
         default:
             return null;

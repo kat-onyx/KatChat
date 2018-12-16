@@ -21,9 +21,22 @@ class ServerForm extends React.Component {
     }
     render () {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.name} onChange={this.handleChange} />
-            </form>
+            <div className="createServer">
+                <div className="create-inner"> 
+                    <form >
+                        <div className="sassy-message">Oh, another server huh?</div>
+                        <div className="create-message">Create</div>
+                        <div className="long-message">Create a new Server and Invite your friends!</div>
+                        <div className="input-box">
+                            <h5 className="name-label">Server Name</h5>
+                                <input value={this.state.name} onChange={this.handleChange} className="name-input"  /> 
+                        </div>
+                        <div className="button-box">
+                            <button onClick={this.handleSubmit} type="button" className="create-button">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         )
     }
 }

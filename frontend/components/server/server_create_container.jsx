@@ -14,14 +14,9 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-    return {
-        // createServer: (server) => dispatch(createServer(server)),
+    return { 
+        createServer: (server) => dispatch(createServer(server)),
         clearErrors: () => dispatch(receiveErrors([])),
-        otherForm: (
-            <button onClick={() => dispatch(openModal('createServer'))}>
-                Signup
-            </button>
-        ),
         closeModal: () => dispatch(closeModal())
     }
 }

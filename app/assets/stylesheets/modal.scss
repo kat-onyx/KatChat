@@ -15,7 +15,7 @@
   transform: translate(-50%, -50%);
 }
 
-.createServer {
+.addServer, .server-create-container {
     background-color: #36393f;
     border-radius: 5px;
     height: 420px;
@@ -24,12 +24,53 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
 
 }
 
+.server-choice-boxes {
+    display: flex;
+    padding: 10px;
+}
+
+.choice-box {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid gray;
+    margin: 10px;
+    width: 50%;
+    border-radius: 3px;
+}
+
 .createInner {
     justify-content: center;
+}
+
+.create-img {
+    height: 54px;
+    width: 78px;
+    justify-content: center;
+    background-image: url(create_server.png);
+    background-repeat: no-repeat;
+    background-size: 78px 54px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.join-img {
+    height: 54px;
+    width: 128px;
+    justify-content: center;
+    background-image: url(join_server.png);
+    background-repeat: no-repeat;
+    background-size: 128px 54px;
+    padding-top: 10p;
+    margin-top: 20px;
+    padding-bottom: 40px;
 }
 
 .sassy-message {
@@ -48,7 +89,8 @@
     font-weight: 500;
     color: #dcddde;
     text-align: center;
-    margin-top: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .long-message {
@@ -61,7 +103,7 @@
     color: #dcddde;
 }
 
-.create-button {
+.add-button {
     background-color: #7289da;
     color: #fff;
     width: 100%;

@@ -17,7 +17,7 @@ class MainComponent extends React.Component {
             <div className="main-page-container">
 
                 <div className="server-container-div">
-                    <button className="createServerButton" onClick={() => this.props.openModal('createServer')}>+</button>
+                    <button className="createServerButton" onClick={() => this.props.openModal('addServer')}>+</button>
                 </div>
 
                 <div className="channel-container-div">Channel (DM or not) Container Here</div>

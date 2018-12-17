@@ -2,6 +2,8 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateServerContainer from '../server/server_create_container';
+import AddServerContainer from '../server/server_add_container';
+import JoinServerContainer from '../server/server_join_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -10,8 +12,14 @@ function Modal({ modal, closeModal }) {
     let component;
    
     switch (modal) {
+        case 'addServer':
+            component = <AddServerContainer />;
+            break;
         case 'createServer':
             component = <CreateServerContainer />;
+            break;
+        case 'joinServer':
+            component = <JoinServerContainer />;
             break;
         default:
             return null;

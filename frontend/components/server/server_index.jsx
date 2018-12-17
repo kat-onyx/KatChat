@@ -1,4 +1,5 @@
 import React from 'react';
+import ServerIndexItem from './server_index_item';
 
 class ServerIndex extends React.Component {
 
@@ -8,13 +9,14 @@ class ServerIndex extends React.Component {
 
 
     render () {
-        let serverIndexItems = this.props.servers.map((server) => {
-            return (<ServerIndexItems server={server}/>)
+        let server = this.props.servers.map((server) => {
+            return (<ServerIndexItem server={server}/>)
         })
 
         return (
             <div>
-                {serverIndexItems}
+                {server}
+                <button className="createServerButton" onClick={() => this.props.openModal('addServer')}>+</button>
             </div>
         )
     }

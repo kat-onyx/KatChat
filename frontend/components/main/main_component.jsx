@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ServerIndexContainer from '../server/server_index_container';
 
 class MainComponent extends React.Component {
     constructor(props) {
@@ -17,7 +17,7 @@ class MainComponent extends React.Component {
             <div className="main-page-container">
 
                 <div className="server-container-div">
-                    <button className="createServerButton" onClick={() => this.props.openModal('addServer')}>+</button>
+                    <ServerIndexContainer />
                 </div>
 
                 <div className="channel-container-div">Channel (DM or not) Container Here</div>

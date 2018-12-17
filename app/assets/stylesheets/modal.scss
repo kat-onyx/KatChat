@@ -122,6 +122,11 @@
     padding: 2px 16px;
 }
 
+.add-button:hover {
+    cursor: pointer;
+    background-color: #657bcc;
+}
+
 h5.name-label {
     text-transform: uppercase;
     color: #b9bbbe;

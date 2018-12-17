@@ -16,7 +16,7 @@ class AddServer extends React.Component {
                             <div className="long-message">Create a new Server and Invite your friends!</div>
                             <div className="create-img"></div>
                             <button type="button" className="add-button" onClick={() => this.props.openModal('createServer')}>
-                                Create Server
+                                Create A Server
                             </button>
                         </div>
                         <div className="choice-box">
@@ -24,7 +24,7 @@ class AddServer extends React.Component {
                             <div className="long-message">Enter a server name to your friends!</div>
                             <div className="join-img"></div>
                             <button type="button" className="add-button" onClick={() => this.props.openModal('joinServer')}>
-                                Join Server
+                                Join A Server
                             </button>
                         </div> 
                 </div>         

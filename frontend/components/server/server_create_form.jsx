@@ -22,6 +22,7 @@ class ServerForm extends React.Component {
     render () {
         return (
             <div className="addServer">
+                <div className="create-message">Create Your Server</div>
                 <div className="create-inner"> 
                     <form >
                         <div className="input-box">

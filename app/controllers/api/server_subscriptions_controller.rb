@@ -25,7 +25,6 @@ class Api::ServerSubscriptionsController < ApplicationController
     end
 
    
-
     def subscription_params
         params.require(:server_subscription).permit(:name)
     end

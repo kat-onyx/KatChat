@@ -8,6 +8,7 @@ class ServerIndexItem extends React.Component {
         this.state = {
             name: this.props.server.name
         }
+
     }
 
     toggleClass() {
@@ -17,7 +18,7 @@ class ServerIndexItem extends React.Component {
     render() {
         return (
             <div>
-                <div className="server-icon" onClick={this.toggleClass()}>
+                <div className="server-icon">
                     {this.state.name[0]}
                 </div>
             </div>

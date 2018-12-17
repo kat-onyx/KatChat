@@ -23,8 +23,8 @@ class Api::ServersController < ApplicationController
     end
 
     def show
-        @server = current_user.subscriptions.find(params[:id]);
-        
+        @server = current_user.subscribed_servers.find(params[:id]);
+        # TODO: do I need to handle not finding a server I own here..?
         render "api/servers/show"
     end
 

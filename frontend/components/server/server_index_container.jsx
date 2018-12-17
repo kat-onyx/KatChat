@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import ServerIndex from './server_index';
+import { fetchServers } from '../../actions/server_actions';
 
 const mapStateToProps = state => {
     return {
@@ -12,7 +13,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        
+        fetchServers: () => dispatch(fetchServers())
     }
 }
 

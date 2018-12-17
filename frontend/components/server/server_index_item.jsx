@@ -12,8 +12,8 @@ class ServerIndexItem extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    {this.state.name}
+                <div className="server-icon">
+                    {this.state.name[0]}
                 </div>
             </div>
         )

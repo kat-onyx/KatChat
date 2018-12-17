@@ -4,6 +4,7 @@ import MainComponent from './main_component';
 import { openModal, closeModal } from "../../actions/modal_actions";
 
 
+
 const mapStateToProps = (state, ownProps) => {
     return {
         servers: state.entities.servers,

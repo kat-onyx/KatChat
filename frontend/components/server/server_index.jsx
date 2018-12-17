@@ -14,7 +14,7 @@ class ServerIndex extends React.Component {
         })
 
         return (
-            <div>
+            <div className="server-index-container">
                 {server}
                 <button className="createServerButton" onClick={() => this.props.openModal('addServer')}>+</button>
             </div>

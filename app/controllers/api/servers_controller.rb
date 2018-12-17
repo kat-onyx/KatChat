@@ -7,7 +7,7 @@ class Api::ServersController < ApplicationController
             ServerSubscription.create(user_id: current_user.id, server_id: @server.id)
             render "api/servers/show"
         else
-            render json: @server.errors.full_messages, status: 402
+            render json: @server.errors.full_messages, status: 422
         end
 
     end
@@ -18,7 +18,7 @@ class Api::ServersController < ApplicationController
         if @server.update(server_params)
             render "api/servers/show"
         else 
-            render json: @server.errors.full_messages, status: 402
+            render json: @server.errors.full_messages, status: 422
         end
     end
 

@@ -2,11 +2,15 @@ class Api::ServerSubscriptionsController < ApplicationController
     def create 
        
         @server = Server.find_by(name: params[:server][:name])
+        if @server.nil?
+            return render json: ["Invalid server name"], status: 422
+        end
+        
         @server_subscription = ServerSubscription.new(user_id: current_user.id, server_id: @server.id)
         if @server_subscription.save 
             render 'api/servers/show'
         else
-            render json: @server_subscription.errors.full_messages, status: 402
+            render json: @server_subscription.errors.full_messages, status: 422
         end
     end
 
@@ -16,7 +20,7 @@ class Api::ServerSubscriptionsController < ApplicationController
             @subscription.destroy
             render 'api/servers/show'
         else
-            render @subscription.errors.full_messages, status: 402
+            render @subscription.errors.full_messages, status: 422
         end
     end
 

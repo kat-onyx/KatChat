@@ -9,10 +9,15 @@ class ServerIndexItem extends React.Component {
             name: this.props.server.name
         }
     }
+
+    toggleClass() {
+        document.querySelector('.server-icon:focus').classList.toggle('active')
+    }
+
     render() {
         return (
             <div>
-                <div className="server-icon">
+                <div className="server-icon" onClick={this.toggleClass()}>
                     {this.state.name[0]}
                 </div>
             </div>

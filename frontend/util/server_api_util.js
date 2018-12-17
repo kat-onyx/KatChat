@@ -28,6 +28,13 @@ export const fetchServers = () => {
     })
 }
 
+export const fetchServer = (server) => {
+    return $.ajax({
+        method: "GET",
+        url: `/api/servers/${server.id}`,
+    })
+}
+
 
 export const createSub = (server) => {
     return $.ajax({

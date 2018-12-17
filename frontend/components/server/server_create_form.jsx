@@ -23,6 +23,7 @@ class ServerForm extends React.Component {
         return (
             <div className="addServer">
                 <div className="create-message">Create Your Server</div>
+                <div className="form-long-message">By creating a server, you will have access to free text chat amongst your friends.</div>
                 <div className="create-inner"> 
                     <form >
                         <div className="input-box">

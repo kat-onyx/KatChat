@@ -4,7 +4,7 @@ import ServerIndexItem from './server_index_item';
 
 class ServerIndex extends React.Component {
 
-    
+
     componentDidMount() {
         this.props.fetchServers();
     }
@@ -12,7 +12,7 @@ class ServerIndex extends React.Component {
 
     render () {
         let server = this.props.servers.map((server) => {
-            return (<ServerIndexItem server={server}/>)
+            return (<ServerIndexItem key={server.id} server={server}/>)
         })
 
         return (

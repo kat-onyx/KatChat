@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resources :servers, only: [:create, :update, :destroy, :show, :index]
     resources :server_subscriptions, only: [:create, :destroy]
+    resources :channels, only: [:create, :update, :destroy, :index, :show]
     resource :session, only: [:create, :destroy]
   end
 

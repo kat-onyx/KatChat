@@ -1,25 +1,23 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class ServerIndexItem extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            name: this.props.server.name
+            name: this.props.server.name,
+            id: this.props.server.id
         }
 
     }
 
-    toggleClass() {
-        document.querySelector('.server-icon:focus').classList.toggle('active')
-    }
 
     render() {
         return (
             <div>
                 <div className="server-icon">
-                    {this.state.name[0]}
+                    <Link to={`/servers/${this.state.id}`}>{this.state.name[0]}</Link>
                 </div>
             </div>
         )

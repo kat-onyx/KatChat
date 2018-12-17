@@ -16,7 +16,8 @@ const mapDispatchToProps = dispatch => {
     return { 
         createServer: (server) => dispatch(createServer(server)),
         clearErrors: () => dispatch(receiveErrors([])),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        openModal: (modal) => dispatch(openModal(modal))
     }
 }
 

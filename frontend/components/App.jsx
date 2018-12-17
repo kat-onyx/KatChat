@@ -14,6 +14,7 @@ const App = (props) => (
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
             <ProtectedRoute path="/" component={MainComponentContainer} />
+            <ProtectedRoute exact path="/servers/:serverId" component={MainComponentContainer} />
         </Switch>
         <button onClick={() => props.dispatch(logout())}>Logout</button>
     </div>

@@ -36,6 +36,9 @@ class JoinForm extends React.Component {
                             <button onClick={this.handleSubmit} type="button" className="add-button">Join</button>
                         </div>
                     </form>
+                    <div className="back-box">
+                        <button onClick={() => this.props.openModal('addServer')} type="button" className="back-button">Back</button>
+                    </div>
                 </div>
             </div>
         )

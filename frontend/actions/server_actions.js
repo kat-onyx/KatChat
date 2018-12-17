@@ -69,6 +69,13 @@ export const fetchServers = (server) => dispatch => {
         )
 }
 
+export const fetchServer = (server) => dispatch => {
+    APIServerUtil.fetchServer(server)
+        .then( resp => dispatch(receiveServer(resp)),
+                err => dispatch(receiveErrors(err.responseJSON))
+        )
+}
+
 export const createSub = (server) => dispatch => {
     APIServerUtil.createSub(server)
         .then( resp => dispatch(receiveSubServer(resp)),

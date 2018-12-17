@@ -4,6 +4,7 @@ import ServerIndexItem from './server_index_item';
 
 class ServerIndex extends React.Component {
 
+    
     componentDidMount() {
         this.props.fetchServers();
     }

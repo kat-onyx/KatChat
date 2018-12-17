@@ -14,7 +14,7 @@ class ServerForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        return this.props.createServer(this.state)
+        this.props.createServer(this.state).then(this.props.closeModal())
     }
     handleChange(e) {
         this.setState({name: e.target.value})

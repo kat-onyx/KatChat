@@ -13,19 +13,20 @@ body {
 }
 
 .title {
+    margin-top: 50px;
      align-items: flex-start;
     box-sizing: border-box;
-    padding: 0px 0px 100px;
+    // padding: 0px 0px 100px;
     font-family: 'Black Ops One', cursive;
     font-size: 28px;
     color: #fff;
-    margin-top: -350px;
-    position: fixed;
+    // margin-top: -350px;
+    // position: fixed;
 }
 
 .login-form-container {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     flex-direction: column;
     align-items: center;
     height: 100vh;
@@ -36,6 +37,7 @@ body {
 
 .login-form {
     // display: flex;
+    margin-top: 75px;
     background: #36393f;
     color: #72767d;
     box-sizing: border-box;

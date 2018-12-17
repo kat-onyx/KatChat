@@ -59,15 +59,13 @@ span.plus {
 button.createServerButton:hover {
     -webkit-transition: border-color .25s ease, color .25s ease;
     border: 1px dashed #f6f6f7;
+}
+
+button.createServerButton:hover, button.createServerButton:hover span {
     color: #f6f6f7;
     cursor: pointer;
 }
 
-span.plus:hover {
-    transition-property: all .25s ease;
-    color: #f6f6f7;
-    cursor: pointer;
-}
 
 .server-icon:hover {
     background: #7e86d8;
@@ -75,7 +73,7 @@ span.plus:hover {
     -webkit-transition: background-color .4s ease;
     cursor: pointer;
 }
-.server-icon:focus {
+.server-icon.active {
     background: #7e86d8;
     border-radius: 10px;
 }

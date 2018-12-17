@@ -24,6 +24,10 @@ class User < ApplicationRecord
         primary_key: :id, 
         foreign_key: :user_id,
         class_name: :ServerSubscription
+    
+    has_many :subscribed_servers,
+        through: :subscriptions,
+        source: :server
 
     attr_reader :password
     before_validation :ensure_session_token

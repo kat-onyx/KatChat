@@ -29,9 +29,8 @@ class Api::ServersController < ApplicationController
     end
 
     def index
-        @servers = current_user.subscriptions
-        
-        render :index
+        @servers = current_user.subscribed_servers
+        render 'api/servers/index'
     end
 
     def destroy

@@ -1,16 +1,18 @@
 class Api::ChannelsController < ApplicationController
 
     def show
-        @channels = Channel.find(params[:id])
+        @channel = Channel.find(params[:id])
 
         render 'api/channels/show'
     end
 
     def index 
+        
         @channels = Server.find(params[:server_id]).channels
 
         render 'api/channels/index'
     end
+
     def create
         @server = Server.find(params[:server_id])
 
@@ -45,7 +47,7 @@ class Api::ChannelsController < ApplicationController
             if @channel.server.owner_id == current_user.id 
                 @channel.destroy
             else
-                render json: ["Cannot delete server"], status: 422
+                render json: ["Cannot delete channel"], status: 422
             end
         end
     end

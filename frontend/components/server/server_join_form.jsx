@@ -14,7 +14,7 @@ class JoinForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        return this.props.createSub(this.state)
+        return this.props.createSub(this.state).then(this.props.closeModal)
     }
 
     handleChange(e) {

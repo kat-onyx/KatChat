@@ -42,49 +42,49 @@ export const receiveErrors = (errors) => {
 }
 
 export const createServer = (server) => dispatch => {
-    APIServerUtil.createServer(server)
+    return APIServerUtil.createServer(server)
         .then( resp => dispatch(receiveServer(resp)),
                 err => dispatch(receiveErrors(err.responseJSON))
         )
 }
 
 export const updateServer = (server) => dispatch => {
-    APIServerUtil.updateServer(server)
+    return APIServerUtil.updateServer(server)
         .then( resp => dispatch(receiveServer(resp)),
                 err => dispatch(receiveErrors(err.responseJSON))
         )
 }
 
 export const deleteServer = (server) => dispatch => {
-    APIServerUtil.deleteServer(server)
+    return APIServerUtil.deleteServer(server)
         .then( resp => dispatch(removeServer(resp)),
                 err => dispatch(receiveErrors(err.responseJSON))
         )
 }
 
 export const fetchServers = (server) => dispatch => {
-    APIServerUtil.fetchServers(server)
+    return APIServerUtil.fetchServers(server)
         .then( resp => dispatch(receiveAllServers(resp)),
                 err => dispatch(receiveErrors(err.responseJSON))
         )
 }
 
 export const fetchServer = (server) => dispatch => {
-    APIServerUtil.fetchServer(server)
+    return APIServerUtil.fetchServer(server)
         .then( resp => dispatch(receiveServer(resp)),
                 err => dispatch(receiveErrors(err.responseJSON))
         )
 }
 
 export const createSub = (server) => dispatch => {
-    APIServerUtil.createSub(server)
+   return APIServerUtil.createSub(server)
         .then( resp => dispatch(receiveSubServer(resp)),
                 
         )
 }
 
 export const destroySub = (server) => dispatch => {
-    APIServerUtil.destroySub(server)
+    return APIServerUtil.destroySub(server)
         .then( resp => dispatch(removeServer(resp)),
                 err => dispatch(receiveErrors(err.responseJSON))
         )

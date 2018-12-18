@@ -7,8 +7,12 @@ class Api::ChannelsController < ApplicationController
     end
 
     def index 
-       
-        @channels = Server.find(params[:server_id]).channels
+        # debugger
+        # @server = Server.where(server_id: current_user.subscribed_servers)
+        # @channels = Server.find(params[:serverId][:serverId]).channels
+        # @channels = Server.find(params([:serverId])).channels
+        # @channels = @server.channels
+        @channels = Channel.where(server_id: current_user.subscribed_servers)
 
         render 'api/channels/index'
     end

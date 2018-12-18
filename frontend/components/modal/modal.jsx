@@ -5,8 +5,9 @@ import CreateServerContainer from '../server/server_create_container';
 import AddServerContainer from '../server/server_add_container';
 import JoinServerContainer from '../server/server_join_container';
 import CreateChannelContainer from '../channels/channel_create_container'
+import { withRouter } from 'react-router-dom';
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal, server }) {
     if (!modal) {
         return null;
     }
@@ -37,9 +38,11 @@ function Modal({ modal, closeModal }) {
     );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+    // debugger
     return {
-        modal: state.ui.modal
+        modal: state.ui.modal,
+        
     };
 };
 
@@ -49,4 +52,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));

@@ -1,4 +1,5 @@
 import React from 'react';
+import ChannelIndexContainer from '../channels/channel_index_container'
 
 class ServerShow extends React.Component {
 
@@ -13,9 +14,9 @@ class ServerShow extends React.Component {
     }
 
     render() {
-        return {
-            // channelIndex?
-        }
+        return (
+            <hi></hi>
+        )
     }
 }
 

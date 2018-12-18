@@ -3,13 +3,14 @@ import React from 'react';
 class ChannelCreateForm extends React.Component {
     constructor(props) {
         super(props);
-
+        
         this.state = {
             name: "",
             currentServerId: this.props.currentServerId,
         }
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(e) {
@@ -24,11 +25,12 @@ class ChannelCreateForm extends React.Component {
     render() {
         return (
             <div className="addChannel">
-                <form className="channel-form">
+                <form className="channel-form" onSubmit={this.handleSubmit}>
                     <div className="channel-input-box">
                         <h5 className="channel-name-label">Channel Name</h5>
                         <input value={this.state.name} onChange={this.handleChange} className="channel-name-input" />
                     </div>
+                    <button>Create</button>
                 </form>
             </div>
         )

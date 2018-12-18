@@ -1,10 +1,10 @@
 import { create } from "domain";
 
-export const fetchChannels = (server) => {
+export const fetchChannels = (serverId) => {
     return $.ajax({
         method: "GET",
         url: `/api/channels`,
-        data: { serverId: server.id }
+        data: { serverId }
     })
 }
 

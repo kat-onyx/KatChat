@@ -12,15 +12,15 @@ class ServerIndexItem extends React.Component {
         }
     }
 
-    toggleFocus() {
-        const currentState = this.state.active;
-        this.setState({ active: !currentState})
-    }
+    // toggleFocus() {
+    //     const currentState = this.state.active;
+    //     this.setState({ active: !currentState})
+    // }
 
     render() {
         return (
             <div>
-                <div className={this.state.active ? "server-icon.active" : "server-icon"}>
+                <div className="server-icon">
                     <Link to={`/servers/${this.state.id}`}
                         onClick={this.toggleFocus}
                     >

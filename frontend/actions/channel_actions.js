@@ -40,8 +40,8 @@ export const fetchChannel = (channel) => dispatch => {
                 err => dispatch(receiveErrors(err.responseJSON)))
 }
 
-export const fetchChannels = () => dispatch => {
-   return APIChannelUtil.fetchChannel()
+export const fetchChannels = (server) => dispatch => {
+   return APIChannelUtil.fetchChannels(server)
             .then(resp => dispatch(receiveAllChannels(resp)),
                 err => dispatch(receiveErrors(err.responseJSON)))
 }

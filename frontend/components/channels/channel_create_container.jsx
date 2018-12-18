@@ -6,6 +6,7 @@ import ChannelCreateForm from './channel_create_form';
 import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state, ownProps) => {
+    
     return {
         channelServerId: state.entities.servers[ownProps.match.params.serverId],
     }

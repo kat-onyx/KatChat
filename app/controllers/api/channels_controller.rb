@@ -7,26 +7,23 @@ class Api::ChannelsController < ApplicationController
     end
 
     def index 
-        
+       
         @channels = Server.find(params[:server_id]).channels
 
         render 'api/channels/index'
     end
 
     def create
-        @server = Server.find(params[:server_id])
+        @server = Server.find(params[:channel][:server_id])
 
         if @server.owner_id == current_user.id
             @channel = Channel.new(channel_params)
-            @channel.server_id = params[:server_id]
-        else
-            render json: ["Only server owners can create channels."]
-        end
-        
-        if @channel.save
-            render 'api/channels/show'
-        else
-            render json: @channel.errors.full_messages, status: 422
+            @channel.server_id = params[:channel][:server_id]
+             if @channel.save
+                render 'api/channels/show'
+             else
+                render json: @channel.errors.full_messages, status: 422
+             end
         end
     end
 

@@ -25,7 +25,7 @@ class JoinForm extends React.Component {
         return (
             <div className="addServer">
                 <div className="create-message">Join a server</div>
-                <div className="form-long-message">By creating a server, you will have access to free text chat amongst your friends.</div>
+                <div className="form-long-message">Enter the name of a server you'd like to join below!</div>
                 <div className="join-inner">
                     <form>
                         <div className="input-box">

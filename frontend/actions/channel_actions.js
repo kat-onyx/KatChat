@@ -23,6 +23,7 @@ export const receiveChannel = (channel) => {
 export const removeChannel = (channel) => {
     return {
         type: REMOVE_CHANNEL,
+        channelId: channel.id
     }
 }
 

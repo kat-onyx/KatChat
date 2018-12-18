@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import MainComponent from './main_component';
+
+//testing
 import { openModal, closeModal } from "../../actions/modal_actions";
 
 

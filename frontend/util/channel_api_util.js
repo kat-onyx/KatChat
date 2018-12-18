@@ -1,7 +1,10 @@
-export const fetchChannels = () => {
+import { create } from "domain";
+
+export const fetchChannels = (server) => {
     return $.ajax({
         method: "GET",
-        url: `/api/channels`
+        url: `/api/channels`,
+        data: { serverId: server.id }
     })
 }
 
@@ -19,6 +22,7 @@ export const createChannel = (channel) => {
         data: { channel }
     })
 }
+global.createChannel = createChannel
 
 export const deleteChannel = (channel) => {
     return $.ajax({

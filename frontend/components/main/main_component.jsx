@@ -19,8 +19,7 @@ class MainComponent extends React.Component {
                 <div className="server-container-div">
                     <ServerIndexContainer />
                 </div>
-
-                <div className="channel-container-div">Channel (DM or not) Container Here</div>
+                <div className="channel-container-div"><button onClick={() => this.props.openModal('createChannel')}>Create Channel</button></div>
                 <div className="messages-feed-container-div">Messages Feed container here</div>
             </div>
         )

@@ -8,7 +8,8 @@ import { withRouter } from 'react-router-dom'
 const mapStateToProps = (state, ownProps) => {
     
     return {
-        channelServerId: state.entities.servers[ownProps.match.params.serverId],
+        currentServerId: ownProps.match.params.serverId,
+        // serverOwnerId: state.server
     }
 }
 

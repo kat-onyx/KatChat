@@ -9,20 +9,22 @@ class Api::ChannelsController < ApplicationController
     def index 
         # debugger
         # @server = Server.where(server_id: current_user.subscribed_servers)
-        # @channels = Server.find(params[:serverId][:serverId]).channels
+        @channels = Server.find(params[:serverId]).channels
         # @channels = Server.find(params([:serverId])).channels
         # @channels = @server.channels
-        @channels = Channel.where(server_id: current_user.subscribed_servers)
+        # @channels = Channel.where(server_id: current_user.subscribed_servers)
 
         render 'api/channels/index'
     end
 
     def create
-        @server = Server.find(params[:channel][:server_id])
+        # debugger
+        @server = Server.find(params[:channel][:currentServerId])
 
         if @server.owner_id == current_user.id
             @channel = Channel.new(channel_params)
-            @channel.server_id = params[:channel][:server_id]
+            @channel.server_id = params[:channel][:currentServerId]
+            
              if @channel.save
                 render 'api/channels/show'
              else
@@ -56,7 +58,7 @@ class Api::ChannelsController < ApplicationController
     private 
 
     def channel_params
-        params.require(:channel).permit(:channel_name)
+        params.require(:channel).permit(:channel_name, :server_id)
     end
 
 end

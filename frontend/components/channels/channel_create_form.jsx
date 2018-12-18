@@ -5,7 +5,7 @@ class ChannelCreateForm extends React.Component {
         super(props);
         
         this.state = {
-            name: "",
+            channel_name: "",
             currentServerId: this.props.currentServerId,
         }
 
@@ -14,12 +14,12 @@ class ChannelCreateForm extends React.Component {
     }
 
     handleChange(e) {
-        this.setState({ name: e.target.value })
+        this.setState({ channel_name: e.target.value })
     }
 
     handleSubmit(e) {
         e.preventDefault();
-
+  
         return this.props.createChannel(this.state).then(this.props.closeModal)
     }
     render() {

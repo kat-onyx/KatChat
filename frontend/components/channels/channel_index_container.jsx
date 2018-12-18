@@ -5,10 +5,12 @@ import { fetchChannels } from '../../actions/channel_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    
     return {
-        // currentUser: state.entities.users[state.session.id],
         channels: Object.values(state.entities.channels),
-        currentServerId: ownProps.props.match.params.serverId
+        currentServerId: ownProps.props.match.params.serverId,
+        currentUserId: state.session.id,
+        // currentServer: state.servers[currentServerId] || {}
     }
     
 }

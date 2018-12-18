@@ -22,7 +22,7 @@ export const createChannel = (channel) => {
         data: { channel }
     })
 }
-global.createChannel = createChannel
+// global.createChannel = createChannel
 
 export const deleteChannel = (channel) => {
     return $.ajax({

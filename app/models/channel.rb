@@ -10,7 +10,7 @@
 #
 
 class Channel < ApplicationRecord
-    validates :name, presence: true
+    validates :channel_name, presence: true
 
     belongs_to :server,
         primary_key: :id,

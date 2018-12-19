@@ -1,10 +1,12 @@
 class Api::MessagesController < ApplicationController
 
     def index
-        @messages = Channel.find_by(channel_id: params[:id]);
+        
+        @messages = Channel.find_by(id: params[:id]).messages;
     end
 
     def show
+        @message = Message.find(params[:id])
     end
 
     def create 

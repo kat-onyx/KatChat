@@ -19,7 +19,7 @@ class ChannelIndex extends React.Component {
     render () {
         
         const channels = this.props.channels.map((channel) => {
-            return (<ChannelIndexItem key={channel.id} channel={channel}/>)
+            return (<ChannelIndexItem key={channel.id} channel={channel} currentServerId={this.props.currentServerId}/>)
         })
 
         let createButton = null;

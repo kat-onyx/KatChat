@@ -12,12 +12,12 @@ const App = (props) => (
     <div>
         
         <ProtectedRoute exact path="/servers/:serverId" component={Modal} />
+        <ProtectedRoute exact path="/servers/:serverId/channels/:channelId" component={Modal} />
         <Switch>
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/servers/:serverId" component={MainComponentContainer} />
             <ProtectedRoute path="/" component={MainComponentContainer} />
-           
         </Switch>
         <button onClick={() => props.dispatch(logout())}>Logout</button>
     </div>

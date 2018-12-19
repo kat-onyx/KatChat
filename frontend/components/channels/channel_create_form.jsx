@@ -25,13 +25,16 @@ class ChannelCreateForm extends React.Component {
     render() {
         return (
             <div className="addChannel">
-                <form className="channel-form" onSubmit={this.handleSubmit}>
+                <form className="channel-form">
                     <div className="channel-form-message">Create Text Channel</div>
                     <div className="input-box">
                         <h5 className="channel-name-label">Channel Name</h5>
                         <input value={this.state.name} onChange={this.handleChange} className="channel-name-input" />
                     </div>
-                    <button>Create</button>
+                    <div className="create-button-div">
+                        <button type="button" className="create-button" onClick={this.handleSubmit}>Create Channel</button>
+                        <button className="cancel-button" onClick={this.props.closeModal}>Cancel</button>
+                    </div>
                 </form>
             </div>
         )

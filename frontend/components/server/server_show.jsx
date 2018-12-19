@@ -15,7 +15,7 @@ class ServerShow extends React.Component {
 
     render() {
         return (
-            <hi></hi>
+            <div>{this.props.server.name}</div>
         )
     }
 }

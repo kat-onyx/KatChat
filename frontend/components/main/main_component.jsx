@@ -1,6 +1,7 @@
 import React from 'react';
 import ServerIndexContainer from '../server/server_index_container';
 import ChannelIndexContainer from '../channels/channel_index_container';
+import ServerShowContainer from '../server/server_show_container';
 
 class MainComponent extends React.Component {
     constructor(props) {
@@ -24,6 +25,7 @@ class MainComponent extends React.Component {
                     <ServerIndexContainer props={this.props}/>
                 </div>
                 <div className="channel-container-div"><ChannelIndexContainer props={this.props}/></div>
+               
                 <div className="messages-feed-container-div">Messages Feed container here</div>
             </div>
         )

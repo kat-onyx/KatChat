@@ -1,0 +1,52 @@
+.channel-index-container {
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.channel-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.channel-list-title {
+    color: #72767d;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 20px;
+    padding-left: 16px;
+   
+}
+
+button.channel-button {
+    background: transparent;
+    border: none;
+    color: #72767d;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    padding-right: 15px;
+}
+
+.channel-box {
+    height: 32px;
+    margin: 1px 8px 1px 8px;
+    padding: 0 8px;
+    font-size: 100%;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    color: #72767d;
+}
+
+.channel-box:hover {
+    background-color: rgba(79,84,92,.6);
+    color: #f6f6f7
+}
+
+span.hash-tag {
+    margin-right: 4px;
+    display: block;
+    font-size: 16px;
+}

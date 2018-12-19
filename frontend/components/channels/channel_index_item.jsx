@@ -11,8 +11,8 @@ class ChannelIndexItem extends React.Component {
 
     render () {
         return (
-            <div>
-                {this.state.name}
+            <div className="channel-box">
+               <span className="hash-tag">#</span> {this.state.name}
             </div>
         )
     }

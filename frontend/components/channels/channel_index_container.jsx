@@ -6,11 +6,14 @@ import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     
+    const currentServerId = ownProps.props.match.params.serverId;
+    const serverOwnerId = {} || ownProps.props.currentServerId.owner_id;
     return {
         channels: Object.values(state.entities.channels),
-        currentServerId: ownProps.props.match.params.serverId,
+        currentServerId,
+        serverOwnerId,
         currentUserId: state.session.id,
-        // currentServer: state.servers[currentServerId] || {}
+        // currentServer: state.servers[currentServerId]
     }
     
 }

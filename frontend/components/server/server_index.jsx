@@ -6,6 +6,7 @@ class ServerIndex extends React.Component {
 
 
     componentDidMount() {
+        
         this.props.fetchServers();
     }
 
@@ -15,8 +16,9 @@ class ServerIndex extends React.Component {
 
 
     render () {
+        
         let server = this.props.servers.map((server) => {
-            return (<ServerIndexItem key={server.id} server={server}/>)
+            return (<ServerIndexItem key={server.id} server={server} fetchChannels={this.props.fetchChannels} ownProps={this.props}/>)
         })
 
         return (

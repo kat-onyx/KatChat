@@ -4,9 +4,10 @@ import { fetchServer, fetchServers } from '../../actions/server_actions';
 import ServerShow from './server_show';
 
 const mapStateToProps = (state, ownProps) => {
+    debugger
     return {
         servers: state.entities.servers,
-        currentServerId: state.servers[ownProps.match.params.serverId]
+        currentServerId: state.servers[ownProps.props.match.params.serverId]
     }
 }
 

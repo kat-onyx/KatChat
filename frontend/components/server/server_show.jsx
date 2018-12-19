@@ -8,7 +8,7 @@ class ServerShow extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.currentServerId != prevProps.match.params.serverId) {
+        if (this.props.currentServerId != prevProps.props.match.params.serverId) {
             fetchServer(this.props.currentServerId)
         }
     }

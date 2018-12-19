@@ -28,6 +28,11 @@ class User < ApplicationRecord
     has_many :subscribed_servers,
         through: :subscriptions,
         source: :server
+    
+    has_many :messages,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :Message
 
     attr_reader :password
     before_validation :ensure_session_token

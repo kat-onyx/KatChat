@@ -39,7 +39,7 @@ function Modal({ modal, closeModal, server }) {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
+   
     return {
         modal: state.ui.modal,
         

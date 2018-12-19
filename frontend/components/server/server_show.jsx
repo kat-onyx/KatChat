@@ -3,19 +3,22 @@ import ChannelIndexContainer from '../channels/channel_index_container'
 
 class ServerShow extends React.Component {
 
-    componentDidMount() {
-        this.props.fetchServer(this.props.currentServerId)
-    }
+    // componentDidMount() {
+    //     this.props.fetchServer(this.props.currentServerId)
+    // }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.currentServerId != prevProps.props.match.params.serverId) {
-            fetchServer(this.props.currentServerId)
-        }
-    }
-
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.currentServerId != prevProps.props.match.params.serverId) {
+    //         fetchServer(this.props.currentServerId)
+    //     }
+    // }
+    
     render() {
+    
         return (
-            <div>{this.props.server.name}</div>
+            <div className="server-name-box">
+                <div className="server-name"> {this.props.currentServer.name} </div>
+            </div>
         )
     }
 }

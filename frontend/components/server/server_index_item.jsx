@@ -18,13 +18,13 @@ class ServerIndexItem extends React.Component {
     //     this.setState({ active: !currentState})
     // }
     handleClick(e) {
-        // debugger
+       
         e.preventDefault();
         this.props.fetchChannels(this.state.id).then(this.props.ownProps.history.push(`/servers/${this.state.id}`))
     }
 
     render() {
-        // debugger
+    
         return (
             <div>
                 <div className="server-icon" onClick={this.handleClick}>

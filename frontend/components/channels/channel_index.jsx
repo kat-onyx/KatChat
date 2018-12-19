@@ -1,5 +1,6 @@
 import React from 'react';
 import ChannelIndexItem from './channel_index_item';
+import ServerShowContainer from '../server/server_show_container';
 import { create } from 'domain';
 
 class ChannelIndex extends React.Component {
@@ -22,13 +23,13 @@ class ChannelIndex extends React.Component {
         })
 
         let createButton = null;
-        // debugger;
+        
         if (this.props.currentServerId !== undefined && this.props.serverOwnerId === this.props.currentUserId) {
             createButton = <button onClick={() => this.props.openModal('createChannel')} className="channel-button">+</button>
         }
         return (
             <div className="channel-index-container">
-                <div>Server Name Here</div>
+                <div className="server-show"><ServerShowContainer servers={this.props.servers}/></div>
                 <div className="channel-list">
                     <div className="channel-list-title">Text Channels</div>
                     <div classname="channel-list-add">{createButton}</div>

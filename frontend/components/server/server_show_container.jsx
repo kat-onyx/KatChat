@@ -4,10 +4,13 @@ import { fetchServer, fetchServers } from '../../actions/server_actions';
 import ServerShow from './server_show';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+ 
+    const currentServerId = ownProps.match.params.serverId;
+    const currentServer = state.entities.servers[currentServerId] || {};
+
     return {
-        servers: state.entities.servers,
-        currentServerId: state.servers[ownProps.props.match.params.serverId]
+        currentServerId,
+        currentServer
     }
 }
 
@@ -17,4 +20,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ServerShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ServerShow));

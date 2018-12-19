@@ -7,7 +7,6 @@ class Api::ChannelsController < ApplicationController
     end
 
     def index 
-        # debugger
         # @server = Server.where(server_id: current_user.subscribed_servers)
         @channels = Server.find(params[:serverId]).channels
         # @channels = Server.find(params([:serverId])).channels
@@ -18,7 +17,6 @@ class Api::ChannelsController < ApplicationController
     end
 
     def create
-        # debugger
         @server = Server.find(params[:channel][:currentServerId])
 
         if @server.owner_id == current_user.id

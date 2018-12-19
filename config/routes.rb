@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :servers, only: [:create, :update, :destroy, :show, :index]
     resources :server_subscriptions, only: [:create, :destroy]
     resources :channels, only: [:create, :update, :destroy, :index, :show]
+    resources :messages, only: [:create, :update, :destroy, :index]
     resource :session, only: [:create, :destroy]
   end
 

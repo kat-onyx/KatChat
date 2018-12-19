@@ -26,7 +26,8 @@ class ChannelCreateForm extends React.Component {
         return (
             <div className="addChannel">
                 <form className="channel-form" onSubmit={this.handleSubmit}>
-                    <div className="channel-input-box">
+                    <div className="channel-form-message">Create Text Channel</div>
+                    <div className="input-box">
                         <h5 className="channel-name-label">Channel Name</h5>
                         <input value={this.state.name} onChange={this.handleChange} className="channel-name-input" />
                     </div>

@@ -22,8 +22,8 @@ class ChannelIndex extends React.Component {
         })
 
         let createButton = null;
-
-        if (this.props.currentServerId !== undefined) {
+        // debugger;
+        if (this.props.currentServerId !== undefined && this.props.serverOwnerId === this.props.currentUserId) {
             createButton = <button onClick={() => this.props.openModal('createChannel')} className="channel-button">+</button>
         }
         return (

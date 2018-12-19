@@ -18,6 +18,7 @@ class ServerIndexItem extends React.Component {
     // }
 
     render() {
+        // debugger
         return (
             <div>
                 <div className="server-icon">

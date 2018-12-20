@@ -8,6 +8,7 @@ class MessageIndex extends React.Component {
 
         this.state = {
             currentMessage: '',
+            currentChannelName: this.props.currentChannelName,
             chatLogs: []
         }
 
@@ -15,6 +16,8 @@ class MessageIndex extends React.Component {
     }
     componentDidMount() {
         this.props.fetchMessages(this.props.currentChannelId);
+        const scroll = document.querySelector(".chat-log")
+        scroll.scrollTop = scroll.scrollHeight;
     }
 
     componentDidUpdate(prevProps) {
@@ -22,13 +25,13 @@ class MessageIndex extends React.Component {
             this.props.fetchMessages(this.props.currentChannelId);
             this.setState({chatLogs: []});
         }
+        const scroll = document.querySelector(".chat-log")
+        scroll.scrollTop = scroll.scrollHeight;
     }
 
-    // componentWillUnmount() {
-    //     if (this.props.currentServerId !== prevProps.currentServerId) {
-    //         this.setState({ chatLogs: [] });
-    //     }
-    // }
+    scrollToBottom() {
+        messages.scrollTop = messages.scrollHeight;
+    }
 
     componentWillMount() {
         this.createSocket();
@@ -58,15 +61,15 @@ class MessageIndex extends React.Component {
             create: function(message) {
                 this.perform('create', {
                     body: message.body,
-                    channelId: message.channelId,
-                    authorId: message.authorId
+                    channel_id: message.channel_id,
+                    author_id: message.author_id
                 });
             }
         });
     }
     handleSend(e) {
         e.preventDefault();
-        this.chats.create({body: this.state.currentMessage, channelId: this.props.currentChannelId, authorId: this.props.currentUserId});
+        this.chats.create({body: this.state.currentMessage, channel_id: this.props.currentChannelId, author_id: this.props.currentUserId});
         this.setState({
             currentMessage: ''
         })
@@ -80,29 +83,38 @@ class MessageIndex extends React.Component {
 
     render() {
         let allMessages = this.props.messages.concat(this.state.chatLogs);
-
+        let users = this.props.users
         let message = allMessages.map((message) => {
-            return (<div className="message-info">
-                {message.body}
+            // debugger
+            let username = users[message.author_id].username
+            return (<div className="message-group">
+                    <div className="user-icon"></div>
+                    <div className="message-content">
+                    <span className="username">{username}</span>
+                        <div className="message-body">
+                            {message.body}
+                        </div>
+                     </div>
             </div>)
         })
         if (this.props.currentChannelId === undefined) {
             message = null;
         }
-       
+    
         return (
             <div className="message-index-box">
                 <div className="chat-log">{message}</div>
-                <div className="message-input-box">
-                    <input 
-                        onKeyPress={(e) => this.handleChatInputKeyPress(e)}
-                        value={this.state.currentMessage} 
-                        onChange={(e) => this.updateCurrentMessage(e)}
-                        type="text" 
-                        placeholder="Enter your message" 
-                        className="chat-input"/>
-                    {/* <button onClick={(e) => this.handleClick(e) }>Send</button> */}
-                </div>
+                    <div className="not-form-box">
+                        <div className="message-input-box">
+                            <input 
+                                onKeyPress={(e) => this.handleChatInputKeyPress(e)}
+                                value={this.state.currentMessage} 
+                                onChange={(e) => this.updateCurrentMessage(e)}
+                                type="text" 
+                                placeholder="Enter your message" 
+                                className="chat-input"/>
+                        </div>
+                    </div>
             </div>
         )
     }

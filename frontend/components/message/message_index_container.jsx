@@ -5,13 +5,12 @@ import { fetchMessages, createMessage } from '../../actions/message_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
+
     const currentChannelId = ownProps.props.match.params.channelId;
     const currentChannelName = state.entities.channels[currentChannelId];
     const currentUserId = state.session.id;
     const currentServerId = ownProps.props.match.params.serverId;
-    const user = {} || state.entities.users[currentUserId];
-    const username = {} || user.username
+    const users = state.entities.users;
      
     return { 
         messages: Object.values(state.entities.messages),
@@ -19,7 +18,8 @@ const mapStateToProps = (state, ownProps) => {
         currentChannelName,
         currentUserId,
         currentServerId,
-        username
+        users, 
+  
     }
 }
 

@@ -1,0 +1,95 @@
+
+.message-index-box {
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    user-select: text;
+    // word-wrap: break-word;
+    justify-content: space-between;
+    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.not-form-box {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-top: 15px;
+    color: rgba(255,255,255,0.7);
+}
+
+.message-group {
+    border-bottom: 1px solid #3e4146;
+    margin: 10px 20px;
+    padding: 20px 0;
+    color: rgba(255,255,255,0.7);
+    display: flex;
+    
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100% - 60px);
+}
+
+span.username {
+    max-width: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-overflow: inherit;
+}
+
+.user-icon {
+    background-image: url("icons8-pacman-50.png");
+    height: 40px;
+    width: 40px;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+.message-body {
+    margin-top: 5px;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.3;
+    user-select: text;
+}
+
+.message-input-box {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    min-height: 40px;
+    max-height: 145px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.chat-log {
+    height: 100%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+input.chat-input {
+    height: auto;
+    color:#bec2be;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.9px;
+    line-height: 1.25rem;
+    margin: 2px 2px 2px 2px;
+    max-height: 144px;
+    min-height: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(114,118,125,.3);
+    border: none;
+    border-radius: 5px;
+}

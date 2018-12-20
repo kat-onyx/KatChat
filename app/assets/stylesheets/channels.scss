@@ -2,6 +2,17 @@
     font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
+.server-name {
+    align-items: center;
+    box-sizing: border-box;
+    height: 48px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 2px 0 rgba(0,0,0,.06);
+    color: #fff;
+    padding: 0 12px 0 16px;
+    display: flex;
+    z-index: 3;
+}
+
 .channel-list {
     display: flex;
     justify-content: space-between;
@@ -41,6 +52,12 @@ button.channel-button {
 }
 
 .channel-box:hover {
+    background-color: rgba(79,84,92,.6);
+    color: #f6f6f7;
+    cursor: pointer;
+}
+
+.active-channel-box {
     background-color: rgba(79,84,92,.6);
     color: #f6f6f7;
     cursor: pointer;

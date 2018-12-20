@@ -13,7 +13,7 @@ class ChannelIndexItem extends React.Component {
 
     render () {
         return (
-            <NavLink to={`/servers/${this.state.serverId}/channels/${this.props.channel.id}`}><div className="channel-box">
+            <NavLink activeClassName="channel-box-hover" to={`/servers/${this.state.serverId}/channels/${this.props.channel.id}`}><div className="channel-box">
                <span className="hash-tag">#</span> {this.state.name}
             </div></NavLink>
         )

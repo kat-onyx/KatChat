@@ -8,7 +8,10 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  config.action_cable.url = "ws://localhost:3000/cable"
 
+  config.action_cable.allowed_request_origins = [/http:\/\/*/, 
+  /https:\/\/*/]
   # Show full error reports.
   config.consider_all_requests_local = true
 

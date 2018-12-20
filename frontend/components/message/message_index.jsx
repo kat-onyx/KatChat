@@ -64,12 +64,18 @@ class MessageIndex extends React.Component {
             }
         });
     }
-    handleClick(e) {
+    handleSend(e) {
         e.preventDefault();
         this.chats.create({body: this.state.currentMessage, channelId: this.props.currentChannelId, authorId: this.props.currentUserId});
         this.setState({
             currentMessage: ''
         })
+    }
+
+    handleChatInputKeyPress(e){
+        if (event.key === 'Enter') {
+            this.handleSend(e);
+        }
     }
 
     render() {
@@ -88,8 +94,14 @@ class MessageIndex extends React.Component {
             <div className="message-index-box">
                 <div className="chat-log">{message}</div>
                 <div className="message-input-box">
-                    <input value={this.state.currentMessage} onChange={(e) => this.updateCurrentMessage(e)}type="text" placeholder="Enter your message" className="chat-input"/>
-                    <button onClick={(e) => this.handleClick(e) }>Send</button>
+                    <input 
+                        onKeyPress={(e) => this.handleChatInputKeyPress(e)}
+                        value={this.state.currentMessage} 
+                        onChange={(e) => this.updateCurrentMessage(e)}
+                        type="text" 
+                        placeholder="Enter your message" 
+                        className="chat-input"/>
+                    {/* <button onClick={(e) => this.handleClick(e) }>Send</button> */}
                 </div>
             </div>
         )

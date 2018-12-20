@@ -10,7 +10,7 @@ import Modal from './modal/modal';
 
 const App = (props) => (
     <div>
-        
+        <Modal />
         <ProtectedRoute exact path="/servers/:serverId" component={Modal} />
         <ProtectedRoute exact path="/servers/:serverId/channels/:channelId" component={Modal} />
         <Switch>

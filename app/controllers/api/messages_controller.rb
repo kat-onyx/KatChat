@@ -2,7 +2,7 @@ class Api::MessagesController < ApplicationController
 
     def index
         
-        @messages = Channel.find_by(id: params[:id]).messages;
+        @messages = Channel.find_by(id: params[:channelId]).messages;
     end
 
     def show

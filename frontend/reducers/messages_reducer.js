@@ -12,7 +12,8 @@ const messagesReducer = (state = {}, action) => {
         case RECEIVE_ALL_MESSAGES: 
             return action.messages;
         case RECEIVE_MESSAGE: 
-            return merge({}, state, { [action.message.id]: action.message})
+            
+            return merge({}, state, action.message)
             //TODO: may be a problem if state is not updating immediately
             //TODO: implement remove
         default:

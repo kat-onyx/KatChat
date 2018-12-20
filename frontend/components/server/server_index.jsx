@@ -3,26 +3,13 @@ import ServerIndexItem from './server_index_item';
 
 
 class ServerIndex extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-
-        }
-    }
 
     componentDidMount() {
         this.props.fetchServers();
     }
 
-    componentDidUpdate() {
-        
-    }
-
     
-    isActive() {
-        return 
-    }
+    
 
     render () {
         

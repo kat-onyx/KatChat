@@ -32,7 +32,7 @@ class ChannelIndex extends React.Component {
                 <div className="server-show"><ServerShowContainer servers={this.props.servers}/></div>
                 <div className="channel-list">
                     <div className="channel-list-title">Text Channels</div>
-                    <div classname="channel-list-add">{createButton}</div>
+                    <div className="channel-list-add">{createButton}</div>
                 </div>
                 <div className="channel-list-item">{ channels }</div>
             </div>

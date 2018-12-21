@@ -16,6 +16,7 @@ class MessageIndex extends React.Component {
     }
     componentDidMount() {
         this.props.fetchMessages(this.props.currentChannelId);
+        this.props.fetchUsers(this.props.currentServerId);
         const scroll = document.querySelector(".chat-log")
         scroll.scrollTop = scroll.scrollHeight;
     }
@@ -105,7 +106,7 @@ class MessageIndex extends React.Component {
         if (this.props.currentChannelName !== undefined) {
             channelShow = <div className="channel-name-inner-box"><ChannelShowContainer channelName={this.props.currentChannelName} /></div>
         }
-        // debugger;
+        
         return (
             <div className="message-index-box">
                 {channelShow}

@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import MessageIndex from './message_index';
 import { fetchMessages, createMessage } from '../../actions/message_actions';
+import { fetchUsers } from '../../actions/user_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    
     const currentChannelId = ownProps.props.match.params.channelId;
     const currentChannelName = state.entities.channels[currentChannelId];
     const currentUserId = state.session.id;
@@ -20,13 +20,14 @@ const mapStateToProps = (state, ownProps) => {
         currentUserId,
         currentServerId,
         users,
-        channels
+        channels,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchMessages: (id) => dispatch(fetchMessages(id)),
+        fetchUsers: (server) => dispatch(fetchUsers(server)),
         createMessage: (message) => dispatch(createMessage(message))
     }
 }

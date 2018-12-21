@@ -26,4 +26,9 @@ class Server < ApplicationRecord
         primary_key: :id,
         foreign_key: :server_id,
         class_name: :Channel
+    
+    has_many :subscribers,
+        through: :subscriptions,
+        source: :subscriber
+
 end

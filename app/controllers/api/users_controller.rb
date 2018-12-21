@@ -11,6 +11,10 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def index
+        @users = Server.find(params[:serverId]).subscribers
+    end
+
     private 
 
     def user_params

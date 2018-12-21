@@ -88,8 +88,11 @@ class MessageIndex extends React.Component {
         let users = this.props.users
         let channelShow = null;
         let message = allMessages.map((message) => {
-    
-            let username = users[message.author_id].username
+            
+            let username = null;
+            if (users[message.author_id]) {
+                username = users[message.author_id].username;
+            }
             return (<div className="message-group">
                     <div className="user-icon"></div>
                     <div className="message-content">

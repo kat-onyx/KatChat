@@ -20,7 +20,6 @@ const App = (props) => (
             <ProtectedRoute exact path="/servers/:serverId/channels/:channelId" component={MainComponentContainer} />
             <ProtectedRoute path="/" component={MainComponentContainer} />
         </Switch>
-        <button onClick={() => props.dispatch(logout())}>Logout</button>
     </div>
 );
 

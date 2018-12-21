@@ -1,5 +1,8 @@
 .channel-index-container {
     font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .server-name {
@@ -27,7 +30,12 @@
     text-transform: uppercase;
     line-height: 20px;
     padding-left: 16px;
-   
+}
+
+.channel-list-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 button.channel-button {
@@ -38,6 +46,10 @@ button.channel-button {
     font-weight: 600;
     cursor: pointer;
     padding-right: 15px;
+}
+
+.channel-name span {
+    margin-right: 4px;
 }
 
 .channel-box {

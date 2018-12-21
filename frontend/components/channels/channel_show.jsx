@@ -1,4 +1,5 @@
 import React from 'react';
+import UserShowContainer from '../user/user_show_container';
 
 class ChannelShow extends React.Component {
     

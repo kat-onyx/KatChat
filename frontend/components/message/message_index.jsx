@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageFormContainer from './message_form_container';
+import ChannelShowContainer from '../channels/channel_show_container';
 
 
 class MessageIndex extends React.Component {
@@ -84,6 +84,7 @@ class MessageIndex extends React.Component {
     render() {
         let allMessages = this.props.messages.concat(this.state.chatLogs);
         let users = this.props.users
+        let channelShow = null;
         let message = allMessages.map((message) => {
             // debugger
             let username = users[message.author_id].username
@@ -100,9 +101,13 @@ class MessageIndex extends React.Component {
         if (this.props.currentChannelId === undefined) {
             message = null;
         }
-    
+        if (this.props.currentChannelName !== undefined) {
+            channelShow = <div className="channel-name-inner-box"><ChannelShowContainer channelName={this.props.currentChannelName} /></div>
+        }
+        // debugger;
         return (
             <div className="message-index-box">
+                {channelShow}
                 <div className="chat-log">{message}</div>
                     <div className="not-form-box">
                         <div className="message-input-box">

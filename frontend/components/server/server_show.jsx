@@ -17,7 +17,7 @@ class ServerShow extends React.Component {
     
         return (
             <div className="server-name-box">
-                <div className="server-name"> {this.props.currentServer.name} </div>
+                <div className="server-name">{this.props.currentServer.name}</div>
             </div>
         )
     }

@@ -25,6 +25,7 @@ class MessageIndex extends React.Component {
         if (this.props.currentChannelId !== prevProps.currentChannelId) {
             this.props.fetchMessages(this.props.currentChannelId);
             this.setState({chatLogs: []});
+            this.props.fetchUsers(this.props.currentServerId);
         }
         const scroll = document.querySelector(".chat-log")
         scroll.scrollTop = scroll.scrollHeight;
@@ -83,7 +84,7 @@ class MessageIndex extends React.Component {
     }
 
     render() {
-       
+       debugger;
         let allMessages = this.props.messages.concat(this.state.chatLogs);
         let users = this.props.users
         let channelShow = null;

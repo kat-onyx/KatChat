@@ -83,7 +83,7 @@ class MessageIndex extends React.Component {
     }
 
     render() {
-        debugger
+       
         let allMessages = this.props.messages.concat(this.state.chatLogs);
         let users = this.props.users
         let channelShow = null;

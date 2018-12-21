@@ -4,7 +4,7 @@ import { fetchChannel } from '../../actions/channel_actions';
 import ChannelShow from './channel_show';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
+
     const currentChannelId = ownProps.match.params.channelId;
     const currentChannel = state.entities.channels[currentChannelId] || {};
 

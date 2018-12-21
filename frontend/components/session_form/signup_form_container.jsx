@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 
 const mapStateToProps = ({errors}) => {
-    debugger
     return {
         errors: errors.login,
         formType: 'Create an account',

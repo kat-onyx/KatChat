@@ -84,12 +84,11 @@ class MessageIndex extends React.Component {
     }
 
     render() {
-       debugger;
         let allMessages = this.props.messages.concat(this.state.chatLogs);
         let users = this.props.users
         let channelShow = null;
         let message = allMessages.map((message) => {
-            // debugger
+    
             let username = users[message.author_id].username
             return (<div className="message-group">
                     <div className="user-icon"></div>

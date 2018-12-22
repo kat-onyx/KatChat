@@ -2,6 +2,7 @@ import React from 'react';
 import ChannelShowContainer from '../channels/channel_show_container';
 
 import EmojiPicker from 'emoji-picker-react';
+import SubsriberIndex from '../user/subscriber_index';
 
 
 class MessageIndex extends React.Component {
@@ -120,20 +121,25 @@ class MessageIndex extends React.Component {
         }
         
         return (
-            <div className="message-index-box">
-                {channelShow}
-                <div className="chat-log">{message}</div>
-                    <div className="not-form-box">
-                        <div className="message-input-box">
-                            <input 
-                                onKeyPress={(e) => this.handleChatInputKeyPress(e)}
-                                value={this.state.currentMessage} 
-                                onChange={(e) => this.updateCurrentMessage(e)}
-                                type="text" 
-                                placeholder="Enter your message" 
-                                className="chat-input"/>
+            <div className="message-subscriber-box">
+                <div className="message-index-box">
+                    {channelShow}
+                    <div className="chat-log">{message}</div>
+                        <div className="not-form-box">
+                            <div className="message-input-box">
+                                <input 
+                                    onKeyPress={(e) => this.handleChatInputKeyPress(e)}
+                                    value={this.state.currentMessage} 
+                                    onChange={(e) => this.updateCurrentMessage(e)}
+                                    type="text" 
+                                    placeholder="Enter your message" 
+                                    className="chat-input"/>
+                            </div>
                         </div>
-                    </div>
+                </div>
+                <div className="subscribers-box-outer">
+                    <SubsriberIndex subscribers={this.props.users} />
+                </div>
             </div>
         )
     }

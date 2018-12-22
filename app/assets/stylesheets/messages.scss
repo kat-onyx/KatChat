@@ -1,15 +1,13 @@
 
 .message-index-box {
-    max-width: 100%;
+    max-width: 62vw;
     width: 100%;
     height: 100vh;
     padding-bottom: 20px;
-    // padding-top: 20px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     user-select: text;
-    // word-wrap: break-word;
     justify-content: space-between;
     font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
@@ -100,4 +98,49 @@ input.chat-input {
     background-color: rgba(114,118,125,.3);
     border: none;
     border-radius: 5px;
+}
+
+.message-subscriber-box {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+.subscriber-buffer {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.06);
+    background: rgb(52, 57, 62);
+    align-items: center;
+    height: 48px;
+    width: 100%;
+    padding: 0 8px 0 12px;
+}
+
+.subsriber-title {
+    padding-top: 100px;
+}
+
+.subscriber-box-inner {
+    padding-right: 100px;
+}
+
+.subsriber-title {
+    padding-top: 65px;
+    color: #99aab5;
+    font-size: 12px;
+    font-weight: 500;
+    height: 28px;
+    letter-spacing: .2px;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 8px;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: hsla(0,0%,100%,.4);
+}
+
+.sub-content {
+    padding: 5px;
+    padding-left: 17px;
+    color: #b9bbbe;
 }

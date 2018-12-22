@@ -1,6 +1,8 @@
 import React from 'react';
 import ChannelShowContainer from '../channels/channel_show_container';
 
+import EmojiPicker from 'emoji-picker-react';
+
 
 class MessageIndex extends React.Component {
     constructor(props) {
@@ -39,6 +41,14 @@ class MessageIndex extends React.Component {
         this.createSocket();
     }
 
+    componentWillUnmount() {
+        this.deleteSocket();
+    }
+
+    deleteSocket() {
+        this.cable.subscriptions.remove(this.chats)
+    }
+
     updateCurrentMessage(e) {
         this.setState({
             currentMessage: e.target.value
@@ -58,7 +68,6 @@ class MessageIndex extends React.Component {
                 let chatLogs = this.state.chatLogs;
                 chatLogs.push(data);
                 this.setState({chatLogs: chatLogs})
-                // this.props.createMessage(data)
             },
             create: function(message) {
                 this.perform('create', {

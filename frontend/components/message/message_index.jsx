@@ -42,13 +42,6 @@ class MessageIndex extends React.Component {
         this.createSocket();
     }
 
-    componentWillUnmount() {
-        this.deleteSocket();
-    }
-
-    deleteSocket() {
-        this.cable.subscriptions.remove(this.chats)
-    }
 
     updateCurrentMessage(e) {
         this.setState({

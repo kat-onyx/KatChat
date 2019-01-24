@@ -4,12 +4,15 @@ import { fetchServer, fetchServers } from '../../actions/server_actions';
 import ServerShow from './server_show';
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger
+    // const servers = state.entities.servers || {};
     const currentServerId = ownProps.match.params.serverId;
     const currentServer = state.entities.servers[currentServerId] || {};
 
     return {
         currentServerId,
-        currentServer
+        currentServer,
+        // servers
     }
 }
 

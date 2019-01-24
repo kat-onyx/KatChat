@@ -14,10 +14,17 @@ class ServerShow extends React.Component {
     // }
     
     render() {
-    
+        // debugger
+        let serverList = Object.keys(this.props.servers);
+        let firstServer = this.props.servers[serverList[0]];
+        let currentServer = this.props.currentServer.name;
+        if (this.props.match.path === "/" && serverList.length != 0 ) {
+            currentServer = firstServer.name
+            this.props.history.push(`/servers/${firstServer.id}`);
+        }
         return (
             <div className="server-name-box">
-                <div className="server-name">{this.props.currentServer.name}</div>
+                <div className="server-name">{ currentServer }</div>
             </div>
         )
     }

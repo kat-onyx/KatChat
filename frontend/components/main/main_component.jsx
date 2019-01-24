@@ -26,9 +26,7 @@ class MainComponent extends React.Component {
                     <ServerIndexContainer props={this.props}/>
                 </div>
                 <div className="channel-container-div"><ChannelIndexContainer props={this.props}/></div>
-                {/* <div><ServerShowContainer props={this.props}/></div> */}
                 <div className="messages-feed-container-div"><MessageIndexContainer props={this.props}/></div>
-                {/* <div className="online-padding">Online</div> */}
             </div>
         )
     }

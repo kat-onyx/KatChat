@@ -21,7 +21,7 @@ class AddServer extends React.Component {
                         </div>
                         <div className="choice-box">
                             <div className="create-message">Join</div>
-                            <div className="long-message">Enter a server name to your friends!</div>
+                            <div className="long-message">Enter a server name to join your friends!</div>
                             <div className="join-img"></div>
                             <button type="button" className="add-button" onClick={() => this.props.openModal('joinServer')}>
                                 Join A Server

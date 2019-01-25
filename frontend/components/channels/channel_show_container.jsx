@@ -7,10 +7,12 @@ const mapStateToProps = (state, ownProps) => {
 
     const currentChannelId = ownProps.match.params.channelId;
     const currentChannel = state.entities.channels[currentChannelId] || {};
+    const channels = state.entities.channels || {};
 
     return {
         currentChannelId,
-        currentChannel
+        currentChannel,
+        channels
     }
 }
 

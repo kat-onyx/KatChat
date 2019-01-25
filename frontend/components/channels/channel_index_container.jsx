@@ -10,12 +10,14 @@ const mapStateToProps = (state, ownProps) => {
     const server = state.entities.servers[ownProps.props.match.params.serverId] || {};
     const serverOwnerId = server.owner_id;
     const servers = state.entities.servers || {};
+    const channelObjs = state.entities.channels;
     return {
         channels: Object.values(state.entities.channels),
         currentServerId,
         serverOwnerId,
         currentUserId: state.session.id,
-        servers
+        servers,
+        channelObjs
         // currentServer: state.servers[currentServerId]
     }
     

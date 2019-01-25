@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
     const currentUserId = state.session.id;
     const currentServerId = ownProps.props.match.params.serverId;
     const users = state.entities.users;
-    const channels = state.entities.channels || {};
+    const channels = Object.keys(state.entities.channels);
+    const currentServer = state.entities.servers[ownProps.match.params.serverId];
      
     return { 
         messages: Object.values(state.entities.messages),

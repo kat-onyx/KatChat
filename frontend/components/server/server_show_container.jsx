@@ -5,14 +5,14 @@ import ServerShow from './server_show';
 
 const mapStateToProps = (state, ownProps) => {
     // debugger
-    // const servers = state.entities.servers || {};
     const currentServerId = ownProps.match.params.serverId;
     const currentServer = state.entities.servers[currentServerId] || {};
+    const ownedChannels = ownProps.channels;
 
     return {
         currentServerId,
         currentServer,
-        // servers
+        ownedChannels
     }
 }
 

@@ -5,7 +5,17 @@ import ServerIndexItem from './server_index_item';
 class ServerIndex extends React.Component {
 
     componentDidMount() {
+        // debugger
         this.props.fetchServers();
+    }
+
+    componentDidUpdate(prevProps) {
+        // debugger
+        if (this.props.servers != prevProps.servers) {
+            if (this.props.servers.length === 0 || this.props.servers[0].id !== 1) {
+                this.props.createSub({ name: "Kat" });
+            }      
+        }
     }
 
     

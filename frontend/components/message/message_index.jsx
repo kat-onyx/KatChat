@@ -28,8 +28,11 @@ class MessageIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
+        // debugger
         if (this.props.currentChannelId !== prevProps.currentChannelId) {
-            this.props.fetchMessages(this.props.currentChannelId);
+            if (this.props.currentChannelId !== undefined) {
+                this.props.fetchMessages(this.props.currentChannelId);
+            }
             this.setState({chatLogs: []});
             this.props.fetchUsers(this.props.currentServerId);
         }
@@ -110,7 +113,7 @@ class MessageIndex extends React.Component {
             </div>)
         })
         if (this.props.currentChannelId === undefined) {
-            message = "Create new servers and channels!";
+            message = <div className="new-channel-message">{"Create some channels (or bug your Server admin to do it) !"}</div>;
             channelShow = <div className="channel-name-inner-box"><ChannelShowContainer /></div>
         }
         if (this.props.currentChannelName !== undefined) {

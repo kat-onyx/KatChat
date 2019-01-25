@@ -1,6 +1,6 @@
 class Api::ServerSubscriptionsController < ApplicationController
     def create 
-       
+  
         @server = Server.find_by(name: params[:server][:name])
         if @server.nil?
             return render json: ["Invalid server name"], status: 422

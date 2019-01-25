@@ -1,4 +1,6 @@
 import { signup, receiveErrors } from "../../actions/session_actions";
+import { createSub } from '../../actions/server_actions';
+import { createChannel } from '../../actions/channel_actions';
 import { connect } from "react-redux";
 import SessionForm from './session_form';
 import { Link } from 'react-router-dom';

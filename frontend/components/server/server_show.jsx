@@ -2,29 +2,47 @@ import React from 'react';
 import ChannelIndexContainer from '../channels/channel_index_container'
 
 class ServerShow extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            currentServer: this.props.currentServer
+        }
+    }
 
-    // componentDidMount() {
-    //     this.props.fetchServer(this.props.currentServerId)
-    // }
+    componentDidMount() {
+        
+    }
 
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.currentServerId != prevProps.props.match.params.serverId) {
-    //         fetchServer(this.props.currentServerId)
-    //     }
-    // }
-    
-    render() {
+    componentDidUpdate(prevProps) {
         // debugger
         let serverList = Object.keys(this.props.servers);
         let firstServer = this.props.servers[serverList[0]];
-        let currentServer = this.props.currentServer.name;
-        if (this.props.match.path === "/" && serverList.length != 0) {
-            currentServer = firstServer.name
-            this.props.history.push(`/servers/${firstServer.id}`);
+        let currentServer = this.props.currentServer;
+        let channelList = Object.keys(this.props.ownedChannels);
+        let firstChannel = this.props.ownedChannels[channelList[0]];
+        
+        if (this.props.currentServer !== prevProps.currentServer) {
+            this.setState({ currentServer: currentServer });
         }
+        if (this.props.match.path === "/" && serverList.length != 0) {
+            this.props.history.push(`/servers/${firstServer.id}`)
+        } else if (this.props.match.params.channelId === undefined && channelList.length != 0) {
+            this.props.history.push(`/servers/${currentServer.id}/channels/${firstChannel.id}`)
+        } else {
+
+        }
+        // if (prevProps)
+        // if (this.props.match.params.channelId === undefined && serverList.length != 0 && channelList.length != 0) {
+        //     this.props.history.push(`/servers/${firstServer.id}/channels/${firstChannel.id}`)
+        // } else 
+    }
+    
+    render() {
+        // debugger
+
         return (
             <div className="server-name-box">
-                <div className="server-name">{currentServer}</div>
+                <div className="server-name">{this.state.currentServer.name}</div>
             </div>
         )
     }

@@ -6,12 +6,14 @@ import { fetchUsers } from '../../actions/user_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    const currentChannelId = ownProps.props.match.params.channelId;
+    // debugger
+    const currentChannelId = ownProps.match.params.channelId;
     const currentChannelName = state.entities.channels[currentChannelId];
     const currentUserId = state.session.id;
-    const currentServerId = ownProps.props.match.params.serverId;
+    const currentServerId = ownProps.match.params.serverId;
     const users = state.entities.users;
     const channels = Object.keys(state.entities.channels);
+    const channelObjs = state.entities.channels;
     const currentServer = state.entities.servers[ownProps.match.params.serverId];
      
     return { 
@@ -22,6 +24,7 @@ const mapStateToProps = (state, ownProps) => {
         currentServerId,
         users,
         channels,
+        channelObjs,
     }
 }
 

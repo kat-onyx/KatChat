@@ -7,8 +7,9 @@ import UserShowContainer from '../user/user_show_container';
 class ChannelIndex extends React.Component {
    
     componentDidMount() {
-        
-        this.props.fetchChannels(this.props.currentServerId)
+        if (this.props.currentServerId) {
+            this.props.fetchChannels(this.props.currentServerId)
+        }
     }
 
     componentDidUpdate(prevProps) {

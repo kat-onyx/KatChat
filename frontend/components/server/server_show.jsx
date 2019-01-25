@@ -20,21 +20,22 @@ class ServerShow extends React.Component {
         let currentServer = this.props.currentServer;
         let channelList = Object.keys(this.props.ownedChannels);
         let firstChannel = this.props.ownedChannels[channelList[0]];
-        
+        let currentChannelId = this.props.match.params.channelId;
+
         if (this.props.currentServer !== prevProps.currentServer) {
             this.setState({ currentServer: currentServer });
         }
         if (this.props.match.path === "/" && serverList.length != 0) {
             this.props.history.push(`/servers/${firstServer.id}`)
-        } else if (this.props.match.params.channelId === undefined && channelList.length != 0) {
+        } else if (currentChannelId === undefined && channelList.length != 0) {
             this.props.history.push(`/servers/${currentServer.id}/channels/${firstChannel.id}`)
-        } else {
-
+        } else if (this.props.channels != prevProps.channels) {
+            if (Object.keys(this.props.channels).length > 0) {
+                this.props.history.push(`/servers/${currentServer.id}/channels/${firstChannel.id}`)
+            } else {
+                this.props.history.push(`/servers/${currentServer.id}`)
+            }
         }
-        // if (prevProps)
-        // if (this.props.match.params.channelId === undefined && serverList.length != 0 && channelList.length != 0) {
-        //     this.props.history.push(`/servers/${firstServer.id}/channels/${firstChannel.id}`)
-        // } else 
     }
     
     render() {

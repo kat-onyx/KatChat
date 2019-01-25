@@ -1,10 +1,5 @@
 import React from 'react';
 
-// formTitleForFormType = {
-//     'signup': "Create an account",
-//     'signin': "Welcome back!"
-// }
-
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);

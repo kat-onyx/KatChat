@@ -1,17 +1,17 @@
 import React from 'react';
 
-const SubsriberIndex = (props) => {
-  
+const SubscriberIndex = (props) => {
+    debugger
     let subsArr = Object.values(props.subscribers);
     let subs = subsArr.map( (sub) => {
-         return <div className="sub-content">{sub.username}</div>
+         return <div className="sub-content" key={sub.id}>{sub.username}</div>
     })
     return (
         <div className="subscriber-buffer">
-            <div className="subsriber-title"> Members - {subs.length} </div>
+            <div className="subscriber-title"> Members - {subs.length} </div>
             <div className="subscribers-box-inner">{subs}</div>
         </div>
     )
 }
 
-export default SubsriberIndex;
+export default SubscriberIndex;

@@ -2,7 +2,7 @@ import React from 'react';
 import ChannelShowContainer from '../channels/channel_show_container';
 
 import EmojiPicker from 'emoji-picker-react';
-import SubsriberIndex from '../user/subscriber_index';
+import SubscriberIndex from '../user/subscriber_index';
 
 
 class MessageIndex extends React.Component {
@@ -109,9 +109,10 @@ class MessageIndex extends React.Component {
                      </div>
             </div>)
         })
-        // if (this.props.currentChannelId === undefined) {
-        //     message = null;
-        // }
+        if (this.props.currentChannelId === undefined) {
+            message = "Create new servers and channels!";
+            channelShow = <div className="channel-name-inner-box"><ChannelShowContainer /></div>
+        }
         if (this.props.currentChannelName !== undefined) {
             channelShow = <div className="channel-name-inner-box"><ChannelShowContainer channelName={this.props.currentChannelName} /></div>
         } 
@@ -134,7 +135,7 @@ class MessageIndex extends React.Component {
                         </div>
                 </div>
                 <div className="subscribers-box-outer">
-                    <SubsriberIndex subscribers={this.props.users} />
+                    <SubscriberIndex subscribers={this.props.users} />
                 </div>
             </div>
         )

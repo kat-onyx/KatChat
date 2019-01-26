@@ -92,7 +92,7 @@ Channel.create(channel_name: "Competitive", server_id: "5")
 Channel.create(channel_name: "Quickplay", server_id: "5")
 
 #General Chatter 
-Message.create(body: "Welcome to the General Server! (And General Chatter).  Take a look around, try joining some servers, and chat! :)",
+Message.create(body: "Welcome to the General Server! (And General Chatter Channel).  Take a look around, try joining some servers, and chat! :)",
  author_id: "1", channel_id: "1")
 
 #Celeste
@@ -184,7 +184,7 @@ Message.create(body: "What is happening right now.", author_id: "11", channel_id
 
 #Quickplay
 Message.create(body: "In QP, I can go a DPS build and no one cares! It's great.", author_id: "12", channel_id: "14");
-Message.create(body: "I have no time for games. Spec correctly because penalty for treason is death!", author_id: "12", channel_id: "14");
+Message.create(body: "I have no time for games. Spec correctly because penalty for stupidity is death!", author_id: "16", channel_id: "14");
 
 
 

@@ -13,7 +13,7 @@ class ServerIndex extends React.Component {
         // debugger
         if (this.props.servers != prevProps.servers) {
             if (this.props.servers.length === 0 || this.props.servers[0].id !== 1) {
-                this.props.createSub({ name: "AppA" });
+                this.props.createSub({ name: "General" });
             }      
         }
     }

@@ -89,9 +89,28 @@ button.createServerButton:hover, button.createServerButton:hover span {
     background: #7e86d8;
     border-radius: 10px;
     -webkit-transition: background-color .4s ease;
+    animation: icon-bounce 0.6s ease-in-out;
     cursor: pointer;
 }
 .server-icon.active {
     background: #7e86d8;
     border-radius: 10px;
+}
+
+@keyframes icon-bounce {
+    0% {
+        border-radius: 20px;
+    }
+
+    33% {
+        border-radius: 5px;
+    }
+
+    66% {
+        border-radius: 12px;
+    }
+
+    100% {
+        border-radius: 10px;
+    }
 }

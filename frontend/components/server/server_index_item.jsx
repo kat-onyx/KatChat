@@ -24,11 +24,15 @@ class ServerIndexItem extends React.Component {
     }
 
     render() {
-    
+        let abbreviated = ""
+        
+        this.state.name.split(" ").map( name => {
+            abbreviated += name[0];
+        })
         return (
             <div>
                 <div className="server-icon" onClick={this.handleClick}>
-                        {this.state.name[0]} <span className="server-name-hover">{this.state.name}</span>
+                        {abbreviated} <span className="server-name-hover">{this.state.name}</span>
                 </div>
             </div>
         )

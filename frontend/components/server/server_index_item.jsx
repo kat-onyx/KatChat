@@ -28,7 +28,7 @@ class ServerIndexItem extends React.Component {
         return (
             <div>
                 <div className="server-icon" onClick={this.handleClick}>
-                        {this.state.name[0]} 
+                        {this.state.name[0]} <span className="server-name-hover">{this.state.name}</span>
                 </div>
             </div>
         )

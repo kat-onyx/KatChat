@@ -12,7 +12,7 @@ class UserShow extends React.Component {
                 <div className="username-box">
                     {username}
                 </div>
-                <button onClick={() => this.props.logout()}><span>Logout</span></button>
+                <button className="logout-button" onClick={() => this.props.logout()}><span>Logout</span></button>
             </div>
         )
     }

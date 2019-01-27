@@ -26,6 +26,9 @@ User.create(email: "Azmodan@g.com", username: "AzmoDUNK", password: "123456") # 
 User.create(email: "Juggernaut@g.com", username: "Juggernaut", password: "123456") # 18
 User.create(email: "Invoker@g.com", username: "Invoker", password: "123456") # 19
 User.create(email: "Sniper@g.com", username: "Sniper", password: "123456") # 20
+User.create(email: "Jon@g.com", username: "Jon", password: "123456") # 21
+User.create(email: "Dan@g.com", username: "Dan", password: "123456") # 22
+User.create(email: "Bill@g.com", username: "Bill", password: "123456") # 23
 
 
 # Servers 1-5
@@ -34,6 +37,7 @@ Server.create(name: "demo's server", owner_id: "2");
 Server.create(name: "Support Mains", owner_id: "8");
 Server.create(name: "Dota2", owner_id: "8");
 Server.create(name: "Heroes of the Storm", owner_id: "8");
+Server.create(name: "JS Talk", owner_id: "1");
 
 # ServerSubs
 ServerSubscription.create(server_id: "1", user_id: "1")
@@ -66,6 +70,10 @@ ServerSubscription.create(server_id: "2", user_id: "2")
 ServerSubscription.create(server_id: "3", user_id: "2")
 ServerSubscription.create(server_id: "4", user_id: "2")
 ServerSubscription.create(server_id: "5", user_id: "2")
+ServerSubscription.create(server_id: "6", user_id: "1")
+ServerSubscription.create(server_id: "6", user_id: "21")
+ServerSubscription.create(server_id: "6", user_id: "22")
+ServerSubscription.create(server_id: "6", user_id: "23")
 
 # Channel for Server1
 Channel.create(channel_name: "General Chatter", server_id: "1") #1
@@ -91,8 +99,13 @@ Channel.create(channel_name: "Ranked", server_id: "4")
 Channel.create(channel_name: "Competitive", server_id: "5")
 Channel.create(channel_name: "Quickplay", server_id: "5")
 
+#Channels for Server6
+Channel.create(channel_name: "Vanilla JS", server_id: "6");
+Channel.create(channel_name: "React", server_id: "6");
+Channel.create(channel_name: "Redux", server_id: "6");
+
 #General Chatter 
-Message.create(body: "Welcome to the General Server! (And General Chatter Channel).  Take a look around, try joining some servers, and chat! :)",
+Message.create(body: "Welcome to the General Server! (And General Chatter Channel).  Take a look around! Try creating some servers joining some (like `JS Talk`), and chat! :)",
  author_id: "1", channel_id: "1")
 
 #Celeste
@@ -185,6 +198,30 @@ Message.create(body: "What is happening right now.", author_id: "11", channel_id
 #Quickplay
 Message.create(body: "In QP, I can go a DPS build and no one cares! It's great.", author_id: "12", channel_id: "14");
 Message.create(body: "I have no time for games. Spec correctly because penalty for stupidity is death!", author_id: "16", channel_id: "14");
+
+#Vanilla JS
+Message.create(body: "Anyone build anything cool using only JS and DOM manipulation of late?", author_id: "1", channel_id: "15");
+
+#React
+Message.create(body: "I feel like there are so many date-pickers out there... But I really need one that works well on mobile,
+has nice keyboard input options.  Any suggetions?", author_id: "21", channel_id: "16");
+Message.create(body: "For React, react-datetime is the most popular by a long shot. You could also try Airbnb's date picker.", author_id: "22", channel_id: "16");
+Message.create(body: "Does anyone know much about Hooks? I've been hearing about them, and I'm excited to try it.", author_id: "21", channel_id: "16");
+Message.create(body: "Hooks are basically a feature that let you use state and other React features without writing a class. 
+They allow you to reuse stateful logic without changing your component hierarchy.  Here, check out the React docs: https://reactjs.org/docs/hooks-intro.html", author_id: "23", channel_id: "16");
+Message.create(body: "Awesome!", author_id: "21", channel_id: "16");
+Message.create(body: "I'll definitely check this out!", author_id: "21", channel_id: "16");
+
+#Redux
+Message.create(body: "Is it OK to have more than one middleware chain in my store enhancer? 
+What's the difference between next and dispatch in a middleware function?", author_id: "21", channel_id: "17");
+Message.create(body: "Well, Redux middleware acts like a linked list. Each middleware function can either call next(action) 
+to pass an action along to the next middleware in line, call dispatch(action) to restart the processing at the beginning of the list, 
+or do nothing at all to stop the action from being processed further.", author_id: "22", channel_id: "17");
+Message.create(body: "This chain of middleware is defined by the arguments passed to the applyMiddleware function used when creating a store. 
+Defining multiple chains will not work correctly, as they would have distinctly different dispatch references and the different chains would 
+effectively be disconnected.", author_id: "22", channel_id: "17");
+Message.create(body: "Cool, thanks :)", author_id: "21", channel_id: "17");
 
 
 

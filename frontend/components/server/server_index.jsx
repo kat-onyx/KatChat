@@ -4,6 +4,14 @@ import ServerIndexItem from './server_index_item';
 
 class ServerIndex extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedServerId: null
+        }
+
+        this.handleServerItemClick = this.handleServerItemClick.bind(this)
+    }
     componentDidMount() {
         // debugger
         this.props.fetchServers();
@@ -19,13 +27,25 @@ class ServerIndex extends React.Component {
     }
 
     
-    
+    handleServerItemClick(id) {
+        this.setState({ selectedServerId: id })
+    }
 
     render () {
         
         let server = this.props.servers.map((server) => {
-            return (<ServerIndexItem key={server.id} server={server} fetchChannels={this.props.fetchChannels} ownProps={this.props}/>)
+            return (<ServerIndexItem
+                key={server.id}
+                id={server.id}
+                name={server.name}
+                fetchChannels={this.props.fetchChannels}
+                ownProps={this.props}
+                onClick={this.handleServerItemClick}
+                active={this.state.selectedServerId === server.id}
+            />)
         })
+
+
 
         return (
             <div className="server-index-container">

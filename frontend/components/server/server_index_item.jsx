@@ -1,38 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const abbreviateName = name => name.split(" ").map(word => word[0])
+
 class ServerIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        
-        this.state = {
-            name: this.props.server.name,
-            id: this.props.server.id,
-            active: false
-        }
+
         this.handleClick = this.handleClick.bind(this);
     }
 
-    // toggleFocus() {
-    //     const currentState = this.state.active;
-    //     this.setState({ active: !currentState})
-    // }
     handleClick(e) {
-       
         e.preventDefault();
-        this.props.fetchChannels(this.state.id).then(this.props.ownProps.history.push(`/servers/${this.state.id}`))
+
+        this.props.onClick(this.props.id);
+        this.props.fetchChannels(this.props.id)
+            .then(this.props.ownProps.history.push(`/servers/${this.props.id}`))
     }
 
     render() {
-        let abbreviated = ""
-        
-        this.state.name.split(" ").map( name => {
-            abbreviated += name[0];
-        })
         return (
             <div>
-                <div className="server-icon" onClick={this.handleClick}>
-                        {abbreviated} <span className="server-name-hover">{this.state.name}</span>
+                <div className={`server-icon ${this.props.active ? 'server-icon-active' : ''}`} onClick={this.handleClick}>
+                        {abbreviateName(this.props.name)} <span className="server-name-hover">{this.props.name}</span>
                 </div>
             </div>
         )

@@ -13,7 +13,6 @@ class ChannelIndexItem extends React.Component {
 	}
 	handleClick(e) {
 		e.preventDefault();
-		// debugger;
 		this.props.onClick(this.props.channel.id);
 		this.props
 			.fetchMessages(this.props.channel.id)
@@ -25,10 +24,6 @@ class ChannelIndexItem extends React.Component {
 	}
 	render() {
 		return (
-			// <NavLink
-			// 	activeClassName="channel-box-hover"
-			// 	to={`/servers/${this.state.serverId}/channels/${this.props.channel.id}`}
-			// > </NavLink>
 			<div
 				className={`channel-box ${
 					this.props.active ? "active-channel-box" : ""

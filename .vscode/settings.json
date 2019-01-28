@@ -1,0 +1,10 @@
+{
+    "prettier.eslintIntegration": true,
+    "eslint.autoFixOnSave": true,
+    "prettier.useTabs": true,
+    "editor.formatOnSave": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint._legacyModuleResolve": true,
+
+}
+

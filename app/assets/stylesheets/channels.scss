@@ -1,83 +1,84 @@
 .channel-index-container {
-    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+	font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 .server-name {
-    align-items: center;
-    box-sizing: border-box;
-    height: 48px;
-    box-shadow: 0 1px 0 rgba(0,0,0,.2), 0 2px 0 rgba(0,0,0,.06);
-    color: #fff;
-    padding: 0 12px 0 16px;
-    display: flex;
-    z-index: 3;
+	align-items: center;
+	box-sizing: border-box;
+	height: 48px;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.06);
+	color: #fff;
+	padding: 0 12px 0 16px;
+	display: flex;
+	z-index: 3;
 }
 
 .channel-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 20px;
 }
 
 .channel-list-title {
-    color: #72767d;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    line-height: 20px;
-    padding-left: 16px;
+	color: #72767d;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	line-height: 20px;
+	padding-left: 16px;
 }
 
 .channel-list-item {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: scroll;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: scroll;
 }
 
 button.channel-button {
-    background: transparent;
-    border: none;
-    color: #72767d;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    padding-right: 15px;
+	background: transparent;
+	border: none;
+	color: #72767d;
+	font-size: 18px;
+	font-weight: 600;
+	cursor: pointer;
+	padding-right: 15px;
 }
 
 .channel-name span {
-    margin-right: 4px;
+	margin-right: 4px;
 }
 
 .channel-box {
-    height: 32px;
-    margin: 1px 8px 1px 8px;
-    padding: 0 8px;
-    font-size: 100%;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    color: #72767d;
+	height: 32px;
+	min-height: 32px;
+	margin: 1px 8px 1px 8px;
+	padding: 0 8px;
+	font-size: 100%;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	color: #72767d;
 }
 
 .channel-box:hover {
-    background-color: rgba(79,84,92,.6);
-    color: #f6f6f7;
-    cursor: pointer;
+	background-color: rgba(79, 84, 92, 0.6);
+	color: #f6f6f7;
+	cursor: pointer;
 }
 
-.active-channel-box {
-    background-color: rgba(79,84,92,.6);
-    color: #f6f6f7;
-    cursor: pointer;
+.channel-box.active-channel-box {
+	background-color: rgba(79, 84, 92, 0.6);
+	color: #f6f6f7;
+	cursor: pointer;
 }
 
 span.hash-tag {
-    margin-right: 4px;
-    display: block;
-    font-size: 16px;
+	margin-right: 4px;
+	display: block;
+	font-size: 16px;
 }

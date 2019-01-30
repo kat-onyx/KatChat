@@ -10,6 +10,10 @@
     <%= favicon_link_tag asset_path('icons8-pacman-50.png'), :rel => 'icon', :type =>  'image/png' %>
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
     <%= action_cable_meta_tag %>
+    
+    <script type="text/javascript"> 
+      window.android = "<=% image_url('app/assets/images/katchat-desktop.svg') %>";
+    </script>
   </head>
 
   <body>

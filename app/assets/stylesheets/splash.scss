@@ -32,7 +32,7 @@
 }
 
 .splash-nav-image {
-	background-image: url("pacman-white.png");
+	background-image: ("pacman-white.png");
 	background-size: 40px;
 	// height: 100%;
 	width: 40px;
@@ -40,7 +40,7 @@
 }
 
 .splash-nav-github-icon {
-	background-image: url("GitHub-Mark-Light-32px.png");
+	background-image: ("GitHub-Mark-Light-32px.png");
 	background-size: 26px;
 	// height: 100%;
 	width: 40px;
@@ -49,7 +49,7 @@
 	margin-top: 5px;
 }
 .splash-nav-linkedin-icon {
-	background-image: url("In-White-34px-R.png");
+	background-image: ("In-White-34px-R.png");
 	background-size: 30px;
 	// height: 100%;
 	width: 40px;
@@ -134,7 +134,7 @@ button.splash-nav-login:hover {
 	justify-content: center;
 	align-items: flex-end;
 	height: 625px;
-	width: 100%;
+	width: 70vw;
 	position: relative;
 }
 
@@ -157,7 +157,11 @@ button.splash-login-button:hover {
 	background-color: #657bcc;
 }
 
-img.desktop {
+.desktop {
+	background-image: url("katchat-desktop.svg");
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
 	position: absolute;
 }
 

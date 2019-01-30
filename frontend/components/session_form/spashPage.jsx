@@ -37,29 +37,15 @@ class SplashPage extends React.Component {
 					<div className="splash-images">
 						<div className="splash-images-inner">
 							Img here
-							<img
-								src="app/assets/images/katchat-desktop.svg"
-								className="desktop"
-							/>
-							<img src="app/assets/images/katchat-bomb.svg" className="bomb" />
-							<img
-								src="app/assets/images/katchat-laptop.svg"
-								className="laptop"
-							/>
-							<img
-								src="app/assets/images/katchat-android.svg"
-								className="android"
-							/>
-							<img
-								src="app/assets/images/katchat-iphone.svg"
-								className="iphone"
-							/>
-							<img
-								src="app/assets/images/katchat-controller.svg"
-								className="controller"
-							/>
-							<img src="app/assets/images/katchat-coin.svg" className="coin" />
-							<img src="app/assets/images/katchat-box.svg" className="box" />
+							<div className="desktop" />
+							{/* <img src="assets/katchat-desktop" className="desktop" />
+							<img src="assets/katchat-bomb" className="bomb" />
+							<img src="assets/katchat-laptop" className="laptop" />
+							<img src="assets/katchat-android" className="android" />
+							<img src="assets/katchat-iphone" className="iphone" />
+							<img src="assets/katchat-controller" className="controller" />
+							<img src="assets/katchat-coin" className="coin" />
+							<img src="assets/katchat-box" className="box" /> */}
 						</div>
 					</div>
 				</div>

@@ -1,0 +1,124 @@
+/* line 1, /Users/kat/Desktop/katchat/app/assets/stylesheets/splash.scss */
+.splash-contents-container {
+	width: 100vw;
+	height: 100vh;
+	background: #26262b;
+	font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* line 8, /Users/kat/Desktop/katchat/app/assets/stylesheets/splash.scss */
+.splash-nav {
+	padding: 10px;
+}
+
+/* line 12, /Users/kat/Desktop/katchat/app/assets/stylesheets/splash.scss */
+.splash-nav-title {
+	font-family: "Black Ops One", cursive;
+	font-size: 28px;
+	color: white;
+}
+
+/* line 18, /Users/kat/Desktop/katchat/app/assets/stylesheets/splash.scss */
+.splash-about-images {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 72px 50px 0;
+}
+
+/* line 22, /Users/kat/Desktop/katchat/app/assets/stylesheets/splash.scss */
+.splash-about p {
+	color: rgba(255, 255, 255, 0.6);
+	margin-bottom: 30px;
+	max-width: 710px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	margin-top: 12px;
+}
+
+/* line 32, /Users/kat/Desktop/katchat/app/assets/stylesheets/splash.scss */
+.splash-about-greeting {
+	color: #fff;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 44px;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.splash-images {
+	/* width: 100%; */
+	/* display: flex; */
+	/* justify-content: center; */
+	/* height: 100%; */
+}
+
+.splash-images-inner {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 638px;
+	width: 100%;
+	position: relative;
+}
+
+img.desktop {
+	position: absolute;
+}
+
+img.laptop {
+	position: absolute;
+	left: 60%;
+}
+
+img.controller {
+	position: absolute;
+	right: 232%;
+}
+
+img.android {
+	position: absolute;
+	right: 482%;
+}
+
+img.iphone {
+	position: absolute;
+	right: 695%;
+}
+img.bomb {
+	position: absolute;
+	right: 638%;
+	bottom: 300px;
+	animation: move infinite;
+	animation-duration: 2s;
+	animation-direction: alternate;
+}
+
+img.coin {
+	position: absolute;
+	left: 635%;
+	bottom: 375px;
+	animation: move infinite;
+	animation-duration: 2s;
+	animation-direction: alternate;
+}
+
+img.box {
+	position: absolute;
+	bottom: 480px;
+}
+
+@keyframes move {
+	0% {
+		transform: translate3d(0, -6px, 0);
+	}
+	100% {
+		transform: translate3d((0, 6px, 0));
+	}
+}

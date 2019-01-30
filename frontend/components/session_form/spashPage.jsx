@@ -37,7 +37,7 @@ class SplashPage extends React.Component {
 					<div className="splash-images">
 						<div className="splash-images-inner">
 							Img here
-							<img src="assets/katchat-desktop.svg" className="desktop" />
+							<embed src="assets/katchat-desktop.svg" className="desktop" />
 							<img src="assets/katchat-bomb.svg" className="bomb" />
 							<img src="assets/katchat-laptop.svg" className="laptop" />
 							<img src="assets/katchat-android.svg" className="android" />

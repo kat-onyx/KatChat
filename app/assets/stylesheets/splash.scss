@@ -32,7 +32,7 @@
 }
 
 .splash-nav-image {
-	background-image: ("pacman-white.png");
+	background-image: image_url("pacman-white.png");
 	background-size: 40px;
 	// height: 100%;
 	width: 40px;
@@ -40,7 +40,7 @@
 }
 
 .splash-nav-github-icon {
-	background-image: ("GitHub-Mark-Light-32px.png");
+	background-image: image_url("GitHub-Mark-Light-32px.png");
 	background-size: 26px;
 	// height: 100%;
 	width: 40px;
@@ -49,7 +49,7 @@
 	margin-top: 5px;
 }
 .splash-nav-linkedin-icon {
-	background-image: ("In-White-34px-R.png");
+	background-image: image_url("In-White-34px-R.png");
 	background-size: 30px;
 	// height: 100%;
 	width: 40px;
@@ -128,13 +128,14 @@ button.splash-nav-login:hover {
 	display: flex;
 	justify-content: center;
 }
-
+.splash-images {
+	// width: 100vw;
+}
 .splash-images-inner {
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
 	height: 625px;
-	width: 70vw;
 	position: relative;
 }
 
@@ -160,49 +161,77 @@ button.splash-login-button:hover {
 .desktop {
 	background-image: url("katchat-desktop.svg");
 	background-repeat: no-repeat;
-	height: 100%;
-	width: 100%;
+	height: 469px;
+	width: 579px;
 	position: absolute;
 }
 
-img.laptop {
+.laptop {
+	background-image: url("katchat-laptop.svg");
+	background-repeat: no-repeat;
 	position: absolute;
-	left: 60%;
+	height: 350px;
+	width: 608px;
+	left: 110%;
 }
 
-img.controller {
+.controller {
+	background-image: url("katchat-controller.svg");
+	background-repeat: no-repeat;
+	width: 158px;
+	height: 108px;
 	position: absolute;
-	right: 232%;
+	right: 269%;
 }
 
-img.android {
+.android {
+	background-image: url("katchat-android.svg");
+	background-repeat: no-repeat;
+	height: 256px;
+	width: 135px;
 	position: absolute;
 	right: 482%;
 }
 
-img.iphone {
+.iphone {
+	background-image: url("katchat-iphone.svg");
+	background-repeat: no-repeat;
+	height: 251px;
+	width: 140px;
 	position: absolute;
-	right: 695%;
+	right: 700%;
 }
-img.bomb {
+.bomb {
+	background-image: url("katchat-bomb.svg");
+	background-repeat: no-repeat;
 	position: absolute;
-	right: 638%;
+	width: 100px;
+	height: 100px;
+	right: 617%;
 	bottom: 300px;
 	animation: move infinite;
 	animation-duration: 2s;
 	animation-direction: alternate;
 }
 
-img.coin {
+.coin {
+	background-image: url("katchat-coin.svg");
+	background-repeat: no-repeat;
+	height: 76px;
+	width: 75px;
 	position: absolute;
-	left: 635%;
-	bottom: 375px;
+	left: 550%;
+	bottom: 380px;
 	animation: move infinite;
 	animation-duration: 2s;
 	animation-direction: alternate;
 }
 
-img.box {
+.box {
+	background-image: url("katchat-box.svg");
+	background-repeat: no-repeat;
+	height: 89px;
+	width: 90px;
 	position: absolute;
 	bottom: 480px;
 }

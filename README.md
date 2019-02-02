@@ -2,7 +2,7 @@
 
 [KatChat Live Demo!](https://kat-chat.herokuapp.com/#/login)
 
-KatChat is a fullstack live messaging application designed after the popular gaming chat-app, Discord. KatChat is built with Ruby on Rails and PostgreSQL on the backend, and React and Redux on the frontend.  KatChat gives users the ability to create and join servers, create channels and message their friends, and view other server subscribers! For live messaging, this app uses Rails' ActionCables, so that users may receive live messages without the need to refresh on the frontend.
+KatChat is a fullstack live messaging application designed after the popular gaming chat-app, Discord. KatChat is built with Ruby on Rails and PostgreSQL on the backend, and React and Redux on the frontend.  KatChat gives users the ability to create and join servers, create channels, message their friends, and view other server subscribers! For live messaging, this app uses Rails' ActionCables, so that users may receive live messages without the need to refresh on the frontend.
 
 
 ## Technologies Used

@@ -14,7 +14,7 @@ KatChat is a fullstack live messaging application designed after the popular gam
 - jQuery/ajax used for backend calls.
 - Javascript, React and Redux used for front end rendering.
 - HTML for website structure.
-- CSS/SCSS used for styling
+- CSS/SCSS used for styling.
 
 ## Noteworthy Features
 
@@ -73,4 +73,4 @@ let message = allMessages.map((message) => {
 - Direct Messaging.
 - Server editing.
 - Channel Editing.
-- AWS and better user profiles!
+- AWS and better user profiles.

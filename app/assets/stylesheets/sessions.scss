@@ -51,7 +51,7 @@ body {
 @media screen and (max-width: 768px) {
 	.login-form-container {
 		width: auto;
-		// height: auto;
+		overflow: scroll;
 	}
 }
 

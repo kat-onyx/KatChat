@@ -19,6 +19,14 @@
 	justify-content: space-between;
 }
 
+@media screen and (max-width: 768px) {
+	.user-content {
+		height: 100px;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+}
+
 button.logout-button {
 	background: transparent;
 	color: red;

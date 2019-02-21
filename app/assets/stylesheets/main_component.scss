@@ -1,45 +1,62 @@
 .main-page-container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    color: #fff; //test color for now, others should have different
-    overflow-wrap: break-word;
-    overflow-x: hidden;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	color: #fff; //test color for now, others should have different
+	overflow-wrap: break-word;
+	overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+	.main-page-container {
+		overflow-x: auto;
+		width: 100vw;
+	}
 }
 
 .server-container-div {
-    background-color: #202225;
-    width: 3%;
-    min-width: 70px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- 
+	background-color: #202225;
+	width: 3%;
+	min-width: 70px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .channel-container-div {
-    background-color: #2f3136;
-    flex-direction: column;
-    width: 12%;
-    min-width: 240px;
-    height: 100vh;
+	background-color: #2f3136;
+	flex-direction: column;
+	width: 12%;
+	min-width: 240px;
+	height: 100vh;
 }
 
+@media screen and (max-width: 768px) {
+	.channel-container-div {
+		min-width: 110px;
+	}
+}
 
 .messages-feed-container-div {
-    background-color: #36393f;
-    display: flex;
-    flex: 1;
-    width: 70%;
-    min-width: 600px;
-    overflow-x: hidden;
+	background-color: #36393f;
+	display: flex;
+	flex: 1;
+	width: 70%;
+	min-width: 600px;
+	overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+	.messages-feed-container-div {
+		width: 100%;
+	}
 }
 
 .subscribers-box-outer {
-    background-color: #2f3136;
-    box-sizing: border-box;
-    width: 15%;
-    min-width: 240px;
-    font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+	background-color: #2f3136;
+	box-sizing: border-box;
+	width: 15%;
+	min-width: 240px;
+	font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
 }

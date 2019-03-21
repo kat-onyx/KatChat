@@ -78,7 +78,7 @@ span.username {
 }
 .chat-log {
 	height: 100%;
-	overflow: scroll;
+	overflow: overlay;
 	scroll-behavior: smooth;
 }
 textarea.chat-input {
